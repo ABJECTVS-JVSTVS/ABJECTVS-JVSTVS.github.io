@@ -78,9 +78,10 @@ body {
 .coat-of-arms-section { display:flex; gap:40px; align-items:flex-start; margin-bottom:36px; }
 .shield-container { flex-shrink:0; width:180px; text-align:center; }
 .shield-img {
-  width:148px; height:178px; margin:0 auto 8px; display:block;
-  object-fit:cover; object-position:center 12%;
-  clip-path:polygon(3% 0, 97% 0, 97% 74%, 50% 100%, 3% 74%);
+  width:160px; height:160px; margin:0 auto 8px; display:block;
+  object-fit:cover; object-position:center center;
+  border:2px solid var(--gold);
+  box-shadow: 0 0 0 1px var(--vellum-shadow), 2px 3px 8px rgba(0,0,0,0.3);
   filter:sepia(10%) contrast(1.05);
   transition: transform 0.4s ease, filter 0.4s ease;
 }
@@ -243,4 +244,13 @@ body {
   <div class="royal-signature">
     <div class="signature-name">Dan Capriles Parra</div>
     <div class="signature-title">REnvP · Director · Martina &amp; Parra Limited</div>
-    <div class="emblem-se
+    
+    <div class="emblem-seal">
+      <img src="senior_lupus.png" alt="Senior Lupus">
+    </div>
+  </div>
+
+  <div class="folio">fol. I</div>
+</div>
+</body>
+</html>
