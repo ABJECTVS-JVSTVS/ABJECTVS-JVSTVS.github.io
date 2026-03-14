@@ -1,251 +1,297 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Martina &amp; Parra — Senior Lupus</title>
+<title>Martina & Parra — Senior Lupus</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=IM+Fell+English:ital@0;1&family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@400;700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
 <style>
 :root {
-  --vellum: #f4e8c1;
-  --vellum-dark: #e8d5a0;
-  --vellum-shadow: #c9a96e;
-  --ink: #1a0f00;
-  --ink-brown: #3d1f00;
-  --red: #8b1a1a;
-  --blue: #1a2d6b;
-  --gold: #b8860b;
-  --gold-light: #d4a017;
-  --gold-bright: #ffd700;
+  --vellum:#f4e8c1;
+  --vellum-dark:#e8d5a0;
+  --vellum-shadow:#c9a96e;
+  --ink:#1a0f00;
+  --ink-brown:#3d1f00;
+  --red:#8b1a1a;
+  --blue:#1a2d6b;
+  --gold:#b8860b;
+  --gold-light:#d4a017;
+  --gold-bright:#ffd700;
 }
-* { margin:0; padding:0; box-sizing:border-box; }
-body {
-  background: radial-gradient(ellipse at center, #3d2510 0%, #1a0d05 100%);
-  font-family: 'IM Fell English', serif;
-  color: var(--ink);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 20px;
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+background:radial-gradient(ellipse at center,#3d2510 0%,#1a0d05 100%);
+font-family:'Cardo',serif;
+color:var(--ink);
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+padding:40px 20px;
 }
-.manuscript {
-  max-width: 860px;
-  width: 100%;
-  background-image:
-    linear-gradient(135deg, #f8edd5 0%, #f0ddb0 30%, #eedcb0 60%, #f4e4c0 100%);
-  position: relative;
-  padding: 60px 70px;
-  box-shadow:
-    0 0 0 2px var(--vellum-shadow),
-    0 0 0 6px #8b6914,
-    0 0 0 8px #c9a84c,
-    0 0 0 12px #8b6914,
-    0 20px 80px rgba(0,0,0,0.8),
-    inset 0 0 120px rgba(180,130,50,0.15);
-  animation: pageAppear 1.5s ease-out;
+
+.manuscript{
+max-width:860px;
+width:100%;
+background-image:linear-gradient(135deg,#f8edd5 0%,#f0ddb0 30%,#eedcb0 60%,#f4e4c0 100%);
+position:relative;
+padding:60px 70px;
+box-shadow:
+0 0 0 2px var(--vellum-shadow),
+0 0 0 6px #8b6914,
+0 0 0 8px #c9a84c,
+0 0 0 12px #8b6914,
+0 20px 80px rgba(0,0,0,0.8),
+inset 0 0 120px rgba(180,130,50,0.15);
 }
-@keyframes pageAppear {
-  from { opacity:0; transform:translateY(30px); }
-  to { opacity:1; transform:translateY(0); }
+
+.border-outer{position:absolute;inset:14px;border:1.5px solid var(--gold);pointer-events:none}
+.border-inner{position:absolute;inset:18px;border:0.5px solid var(--vellum-shadow);pointer-events:none}
+
+.corner{position:absolute;width:40px;height:40px;color:var(--gold);font-size:28px;display:flex;align-items:center;justify-content:center}
+.corner-tl{top:6px;left:6px}
+.corner-tr{top:6px;right:6px}
+.corner-bl{bottom:6px;left:6px}
+.corner-br{bottom:6px;right:6px}
+
+.royal-header{text-align:center;margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--gold);position:relative}
+
+.regnal-date{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.3em;color:var(--red);text-transform:uppercase;margin-bottom:10px}
+
+.royal-title{font-family:'UnifrakturMaguntia',cursive;font-size:1.9rem;color:var(--ink-brown);line-height:1.6;margin-bottom:6px}
+
+.coat-of-arms-section{display:flex;gap:40px;align-items:flex-start;margin-bottom:36px}
+
+.shield-container{flex-shrink:0;width:180px;text-align:center}
+
+.shield-img{width:160px;height:160px;margin:0 auto 8px;display:block;object-fit:cover;border:2px solid var(--gold);box-shadow:0 0 0 1px var(--vellum-shadow),2px 3px 8px rgba(0,0,0,.3);filter:sepia(10%) contrast(1.05)}
+
+.shield-motto{font-family:'UnifrakturMaguntia',cursive;font-size:1.1rem;color:var(--red);letter-spacing:.05em;margin-top:4px}
+
+.fire-word{display:inline;transition:color .2s ease,text-shadow .2s ease;cursor:default}
+
+.fire-word:hover{
+color:#cc1100!important;
+text-shadow:0 0 6px rgba(220,50,0,.9),0 0 18px rgba(255,100,0,.6),0 0 35px rgba(255,50,0,.3);
 }
-.border-outer { position:absolute; inset:14px; border:1.5px solid var(--gold); pointer-events:none; }
-.border-inner { position:absolute; inset:18px; border:0.5px solid var(--vellum-shadow); pointer-events:none; }
-.corner { position:absolute; width:40px; height:40px; color:var(--gold); font-size:28px; display:flex; align-items:center; justify-content:center; }
-.corner-tl { top:6px; left:6px; }
-.corner-tr { top:6px; right:6px; }
-.corner-bl { bottom:6px; left:6px; }
-.corner-br { bottom:6px; right:6px; }
-.marginalia {
-  position:absolute; font-family:'IM Fell English',serif; font-size:0.65rem;
-  color:var(--vellum-shadow); font-style:italic; left:18px; top:50%;
-  transform:translateY(-50%) rotate(180deg); writing-mode:vertical-rl;
-  letter-spacing:0.1em; opacity:0.7;
+
+.decree-text{font-family:'Cardo',serif;font-size:1.05rem;line-height:1.9;color:var(--ink-brown);text-align:justify}
+
+.decree-text p{margin-bottom:1.2em}
+
+.drop-cap::first-letter{
+font-family:'UnifrakturMaguntia',cursive;
+font-size:5.5rem;
+float:left;
+line-height:.75;
+margin-right:8px;
+margin-top:8px;
+color:var(--red);
+text-shadow:2px 2px 0 var(--gold);
 }
-.royal-header {
-  text-align:center; margin-bottom:32px; padding-bottom:24px;
-  border-bottom:1px solid var(--gold); position:relative;
-}
-.royal-header::after {
-  content:'❧'; position:absolute; bottom:-14px; left:50%;
-  transform:translateX(-50%); background:var(--vellum); padding:0 12px;
-  color:var(--gold); font-size:20px;
-}
-.regnal-date { font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.3em; color:var(--red); text-transform:uppercase; margin-bottom:10px; }
-.royal-title { font-family:'UnifrakturMaguntia',cursive; font-size:1.8rem; color:var(--ink-brown); line-height:1.6; margin-bottom:6px; }
-.coat-of-arms-section { display:flex; gap:40px; align-items:flex-start; margin-bottom:36px; }
-.shield-container { flex-shrink:0; width:180px; text-align:center; }
-.shield-img {
-  width:160px; height:160px; margin:0 auto 8px; display:block;
-  object-fit:cover; object-position:center center;
-  border:2px solid var(--gold);
-  box-shadow: 0 0 0 1px var(--vellum-shadow), 2px 3px 8px rgba(0,0,0,0.3);
-  filter:sepia(10%) contrast(1.05);
-  transition: transform 0.4s ease, filter 0.4s ease;
-}
-.shield-img:hover { transform:scale(1.04); filter:sepia(5%) contrast(1.1) brightness(1.05); }
-.shield-motto { font-family:'UnifrakturMaguntia',cursive; font-size:1.1rem; color:var(--red); letter-spacing:0.05em; margin-top:4px; }
-.fire-word {
-  display:inline;
-  transition: color 0.2s ease, text-shadow 0.2s ease;
-  cursor:default;
-}
-.fire-word:hover {
-  color: #cc1100 !important;
-  text-shadow: 0 0 6px rgba(220,50,0,0.9), 0 0 18px rgba(255,100,0,0.6), 0 0 35px rgba(255,50,0,0.3);
-}
-.decree-text { font-family:'IM Fell English',serif; font-size:1.0rem; line-height:1.9; color:var(--ink-brown); text-align:justify; hyphens:auto; }
-.decree-text p { margin-bottom:1.2em; }
-.drop-cap::first-letter {
-  font-family:'UnifrakturMaguntia',cursive; font-size:5.5rem; float:left;
-  line-height:0.75; margin-right:8px; margin-top:8px; color:var(--red);
-  text-shadow:2px 2px 0px var(--gold);
-}
-.rubricated { color:var(--red); font-style:italic; }
-.small-caps { font-variant:small-caps; letter-spacing:0.08em; }
-.divider {
-  text-align:center; margin:28px 0; color:var(--gold); font-size:1.2rem; letter-spacing:0.5em; position:relative;
-}
-.divider::before, .divider::after {
-  content:''; position:absolute; top:50%; width:30%; height:0.5px;
-  background:linear-gradient(to right, transparent, var(--gold));
-}
-.divider::before { left:5%; }
-.divider::after { right:5%; background:linear-gradient(to left, transparent, var(--gold)); }
-.section-title { font-family:'Cinzel Decorative',serif; font-size:0.75rem; letter-spacing:0.25em; color:var(--red); text-transform:uppercase; text-align:center; margin-bottom:16px; }
-.triptych { display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; margin:28px 0; border-top:0.5px solid var(--gold); border-bottom:0.5px solid var(--gold); padding:24px 0; }
-.triptych-item { text-align:center; padding:0 12px; border-right:0.5px solid var(--vellum-shadow); }
-.triptych-item:last-child { border-right:none; }
-.triptych-label { font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.2em; color:var(--red); text-transform:uppercase; margin-bottom:6px; display:block; }
-.triptych-value { font-family:'IM Fell English',serif; font-size:0.88rem; color:var(--ink-brown); line-height:1.5; font-style:italic; }
-.sealed-section {
-  background:linear-gradient(135deg, rgba(26,45,107,0.06), rgba(139,26,26,0.04));
-  border:1px solid var(--gold); padding:24px 28px; margin:28px 0; position:relative;
-}
-.sealed-section::before {
-  content:'☩'; position:absolute; top:-12px; left:50%; transform:translateX(-50%);
-  background:var(--vellum); padding:0 10px; color:var(--gold); font-size:16px;
-}
-.sigil-section { text-align:center; margin-top:36px; padding-top:28px; border-top:1px solid var(--gold); }
-.sigil { font-size:2.5rem; color:var(--gold); margin-bottom:10px; display:block; }
-.contact-line { font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.2em; color:var(--ink-brown); margin-bottom:6px; }
-.contact-line a { color:var(--red); text-decoration:none; border-bottom:0.5px solid var(--red); }
-.royal-signature { margin-top:36px; display:flex; justify-content:flex-end; align-items:flex-end; flex-direction:column; text-align:right; }
-.signature-name { font-family:'UnifrakturMaguntia',cursive; font-size:1.8rem; color:var(--ink-brown); line-height:1.2; }
-.signature-title { font-family:'IM Fell English',serif; font-size:0.78rem; font-style:italic; color:var(--vellum-shadow); letter-spacing:0.1em; margin-top:4px; }
-.emblem-seal {
-  width:120px; height:120px; border-radius:50%; overflow:hidden;
-  border:3px solid var(--gold);
-  box-shadow:0 0 0 1px var(--vellum-shadow), 3px 4px 12px rgba(0,0,0,0.4);
-  margin-top:16px; align-self:flex-end;
-  transition:transform 0.4s ease, box-shadow 0.4s ease;
-}
-.emblem-seal:hover {
-  transform:scale(1.06) rotate(2deg);
-  box-shadow:0 0 0 1px var(--gold-bright), 0 0 20px rgba(184,134,11,0.5), 3px 4px 12px rgba(0,0,0,0.4);
-}
-.emblem-seal img { width:100%; height:100%; object-fit:cover; object-position:center 15%; filter:sepia(10%) contrast(1.05); }
-.folio { position:absolute; bottom:24px; right:80px; font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; color:var(--vellum-shadow); }
+
+.rubricated{color:var(--red);font-style:italic}
+.small-caps{font-variant:small-caps;letter-spacing:.08em}
+
+.divider{text-align:center;margin:28px 0;color:var(--gold);font-size:1.2rem;letter-spacing:.5em}
+
+.triptych{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin:28px 0;border-top:.5px solid var(--gold);border-bottom:.5px solid var(--gold);padding:24px 0}
+
+.triptych-item{text-align:center;padding:0 12px;border-right:.5px solid var(--vellum-shadow)}
+.triptych-item:last-child{border-right:none}
+
+.triptych-label{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.2em;color:var(--red);text-transform:uppercase;margin-bottom:6px;display:block}
+
+.triptych-value{font-family:'Cardo',serif;font-size:.9rem;color:var(--ink-brown);line-height:1.5;font-style:italic}
+
+.sealed-section{background:linear-gradient(135deg,rgba(26,45,107,.06),rgba(139,26,26,.04));border:1px solid var(--gold);padding:24px 28px;margin:28px 0;position:relative}
+
+.section-title{font-family:'Cinzel Decorative',serif;font-size:.75rem;letter-spacing:.25em;color:var(--red);text-transform:uppercase;text-align:center;margin-bottom:16px}
+
+.sigil-section{text-align:center;margin-top:36px;padding-top:28px;border-top:1px solid var(--gold)}
+
+.sigil{font-size:2.5rem;color:var(--gold);margin-bottom:10px;display:block}
+
+.contact-line{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.2em;color:var(--ink-brown);margin-bottom:6px}
+
+.contact-line a{color:var(--red);text-decoration:none;border-bottom:.5px solid var(--red)}
+
+.royal-signature{margin-top:36px;display:flex;justify-content:flex-end;align-items:flex-end;flex-direction:column;text-align:right}
+
+.signature-name{font-family:'UnifrakturMaguntia',cursive;font-size:1.8rem;color:var(--ink-brown)}
+
+.signature-title{font-family:'Cardo',serif;font-size:.78rem;font-style:italic;color:var(--vellum-shadow);letter-spacing:.1em;margin-top:4px}
+
+.emblem-seal{width:120px;height:120px;border-radius:50%;overflow:hidden;border:3px solid var(--gold);box-shadow:0 0 0 1px var(--vellum-shadow),3px 4px 12px rgba(0,0,0,.4);margin-top:16px}
+
+.emblem-seal img{width:100%;height:100%;object-fit:cover}
+
+.folio{position:absolute;bottom:24px;right:80px;font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.2em;color:var(--vellum-shadow)}
+
 @media(max-width:600px){
-  .manuscript{padding:40px 28px;}
-  .coat-of-arms-section{flex-direction:column;align-items:center;}
-  .triptych{grid-template-columns:1fr;}
-  .triptych-item{border-right:none;border-bottom:0.5px solid var(--vellum-shadow);padding:12px 0;}
-  .triptych-item:last-child{border-bottom:none;}
-  .marginalia{display:none;}
+.manuscript{padding:40px 28px}
+.coat-of-arms-section{flex-direction:column;align-items:center}
+.triptych{grid-template-columns:1fr}
+.triptych-item{border-right:none;border-bottom:.5px solid var(--vellum-shadow);padding:12px 0}
+.triptych-item:last-child{border-bottom:none}
+.drop-cap::first-letter{font-size:3.5rem}
 }
+
 </style>
 </head>
+
 <body>
+
 <div class="manuscript">
-  <div class="border-outer"></div>
-  <div class="border-inner"></div>
-  <div class="corner corner-tl">✦</div>
-  <div class="corner corner-tr">✦</div>
-  <div class="corner corner-bl">✦</div>
-  <div class="corner corner-br">✦</div>
-  <div class="marginalia">Martina &amp; Parra · London · Anno Domini MMXXVI</div>
 
-  <div class="royal-header">
-    <div class="regnal-date">In the Year of Our Lord · MMXXVI · London, England</div>
-    <div class="royal-title">Martina &amp; Parra</div>
-    <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.3em;color:var(--vellum-shadow);text-transform:uppercase;margin-top:4px;">Engineering · Science · Innovation</div>
-  </div>
+<div class="border-outer"></div>
+<div class="border-inner"></div>
 
-  <div class="coat-of-arms-section">
-    <div class="shield-container">
-      <img class="shield-img" src="senior_lupus.png" alt="Senior Lupus Arms">
-      <div class="shield-motto">Senior · Lvpvs</div>
-    </div>
-    <div style="flex:1;">
-      <p class="decree-text drop-cap">
-        <span class="rubricated fire-word">Know</span> <span class="fire-word">all</span> <span class="fire-word">men</span> <span class="fire-word">by</span> <span class="fire-word">these</span> <span class="fire-word">presents,</span> <span class="fire-word">that</span> <span class="small-caps fire-word">Martina &amp; Parra Limited</span> <span class="fire-word">is</span> <span class="fire-word">a</span> <span class="fire-word">company</span> <span class="fire-word">of</span> <span class="fire-word">engineering</span> <span class="fire-word">and</span> <span class="fire-word">science,</span> <span class="fire-word">established</span> <span class="fire-word">in</span> <span class="rubricated fire-word">London, England,</span> <span class="fire-word">dedicated</span> <span class="fire-word">to</span> <span class="fire-word">the</span> <span class="fire-word">advancement</span> <span class="fire-word">of</span> <span class="fire-word">knowledge</span> <span class="fire-word">and</span> <span class="fire-word">the</span> <span class="fire-word">application</span> <span class="fire-word">thereof</span> <span class="fire-word">to</span> <span class="fire-word">the</span> <span class="fire-word">benefit</span> <span class="fire-word">of</span> <span class="fire-word">mankind</span> — <span class="fire-word">in</span> <span class="fire-word">the</span> <span class="fire-word">tradition</span> <span class="fire-word">of</span> <span class="fire-word">those</span> <span class="fire-word">who,</span> <span class="fire-word">across</span> <span class="fire-word">five</span> <span class="fire-word">centuries,</span> <span class="fire-word">carried</span> <span class="fire-word">the</span> <span class="fire-word">same</span> <span class="fire-word">name</span> <span class="fire-word">through</span> <span class="fire-word">courts,</span> <span class="fire-word">oceans,</span> <span class="fire-word">and</span> <span class="fire-word">continents.</span>
-      </p>
-    </div>
-  </div>
+<div class="corner corner-tl">✦</div>
+<div class="corner corner-tr">✦</div>
+<div class="corner corner-bl">✦</div>
+<div class="corner corner-br">✦</div>
 
-  <div class="decree-text">
-    <p>
-      <span class="rubricated fire-word">Be it known</span> <span class="fire-word">that</span> <span class="fire-word">the</span> <span class="fire-word">lineage</span> <span class="fire-word">herein</span> <span class="fire-word">represented</span> <span class="fire-word">descends</span> <span class="fire-word">from</span> <span class="small-caps fire-word">Abraham Senior,</span> <span class="fire-word">Grand</span> <span class="fire-word">Rabbi</span> <span class="fire-word">of</span> <span class="fire-word">Castile</span> <span class="fire-word">and</span> <span class="fire-word">principal</span> <span class="fire-word">counsellor</span> <span class="fire-word">to</span> <span class="fire-word">Their</span> <span class="fire-word">Catholic</span> <span class="fire-word">Majesties</span> <span class="fire-word">Fernando</span> <span class="fire-word">and</span> <span class="fire-word">Isabel</span> — <span class="fire-word">he</span> <span class="fire-word">who</span> <span class="fire-word">at</span> <span class="fire-word">the</span> <span class="fire-word">Monastery</span> <span class="fire-word">of</span> <span class="fire-word">Guadalupe,</span> <span class="fire-word">in</span> <span class="fire-word">the</span> <span class="fire-word">month</span> <span class="fire-word">of</span> <span class="fire-word">June</span> <span class="fire-word">of</span> <span class="fire-word">the</span> <span class="fire-word">year</span> <span class="rubricated fire-word">MCCCCXCII,</span> <span class="fire-word">received</span> <span class="fire-word">baptism</span> <span class="fire-word">under</span> <span class="fire-word">the</span> <span class="fire-word">sponsorship</span> <span class="fire-word">of</span> <span class="fire-word">the</span> <span class="fire-word">King</span> <span class="fire-word">himself,</span> <span class="fire-word">and</span> <span class="fire-word">was</span> <span class="fire-word">thereafter</span> <span class="fire-word">known</span> <span class="fire-word">as</span> <span class="small-caps fire-word">Fernando Pérez Coronel,</span> <span class="fire-word">appointed</span> <span class="fire-word">to</span> <span class="fire-word">the</span> <span class="fire-word">Royal</span> <span class="fire-word">Council</span> <span class="fire-word">with</span> <span class="fire-word">voice,</span> <span class="fire-word">vote,</span> <span class="fire-word">and</span> <span class="fire-word">the</span> <span class="fire-word">annual</span> <span class="fire-word">emolument</span> <span class="fire-word">of</span> <span class="fire-word">thirty</span> <span class="fire-word">thousand</span> <span class="rubricated fire-word">maravedís.</span>
-    </p>
-    <p>
-      <span class="rubricated fire-word">And be it further known</span> <span class="fire-word">that</span> <span class="small-caps fire-word">Dom Manuel I,</span> <span class="fire-word">King</span> <span class="fire-word">of</span> <span class="fire-word">Portugal,</span> <span class="fire-word">Lord</span> <span class="fire-word">of</span> <span class="fire-word">Guinea</span> <span class="fire-word">and</span> <span class="fire-word">of</span> <span class="fire-word">the</span> <span class="fire-word">Conquest,</span> <span class="fire-word">Navigation</span> <span class="fire-word">and</span> <span class="fire-word">Commerce</span> <span class="fire-word">of</span> <span class="fire-word">Ethiopia,</span> <span class="fire-word">Arabia,</span> <span class="fire-word">Persia</span> <span class="fire-word">and</span> <span class="fire-word">India,</span> <span class="fire-word">did</span> <span class="fire-word">confirm</span> <span class="fire-word">in</span> <span class="fire-word">the</span> <span class="fire-word">year</span> <span class="rubricated fire-word">MCCCCXCIX</span> <span class="fire-word">at</span> <span class="rubricated fire-word">Sintra</span> <span class="fire-word">a</span> <span class="fire-word">grant</span> <span class="fire-word">of</span> <span class="fire-word">fidalguia</span> <span class="fire-word">to</span> <span class="small-caps fire-word">Mestre Niculao Coronel,</span> <span class="fire-word">physician</span> <span class="fire-word">to</span> <span class="fire-word">the</span> <span class="fire-word">Royal</span> <span class="fire-word">Court</span> — <span class="fire-word">of</span> <span class="fire-word">the</span> <span class="fire-word">lineage</span> <span class="fire-word">of</span> <span class="rubricated fire-word">Abrão Rodrigues Coronel do Reino de Espanha</span> — <span class="fire-word">as</span> <span class="fire-word">it</span> <span class="fire-word">is</span> <span class="fire-word">recorded</span> <span class="fire-word">in</span> <span class="fire-word">the</span> <span class="small-caps fire-word">Chancelaria de Dom Manuel I,</span> <span class="fire-word">Livro</span> <span class="rubricated fire-word">XVI,</span> <span class="fire-word">folio</span> <span class="rubricated fire-word">CVIIIv,</span> <span class="fire-word">preserved</span> <span class="fire-word">in</span> <span class="fire-word">the</span> <span class="small-caps fire-word">Arquivo Nacional Torre do Tombo,</span> <span class="fire-word">Lisbon.</span>
-    </p>
-    <p>
-      <span class="fire-word">This</span> <span class="fire-word">lineage,</span> <span class="fire-word">having</span> <span class="fire-word">endured</span> <span class="fire-word">dispersal</span> <span class="fire-word">and</span> <span class="fire-word">persecution,</span> <span class="fire-word">crossed</span> <span class="fire-word">the</span> <span class="fire-word">seas</span> <span class="fire-word">and</span> <span class="fire-word">established</span> <span class="fire-word">itself</span> <span class="fire-word">in</span> <span class="rubricated fire-word">Amsterdam,</span> <span class="fire-word">in</span> <span class="rubricated fire-word">Curaçao,</span> <span class="fire-word">and</span> <span class="fire-word">in</span> <span class="fire-word">the</span> <span class="fire-word">Americas</span> — <span class="fire-word">leaving</span> <span class="fire-word">documentary</span> <span class="fire-word">evidence</span> <span class="fire-word">at</span> <span class="fire-word">every</span> <span class="fire-word">step,</span> <span class="fire-word">from</span> <span class="fire-word">the</span> <span class="rubricated fire-word">Autos da Fé</span> <span class="fire-word">of</span> <span class="fire-word">the</span> <span class="fire-word">Inquisition</span> <span class="fire-word">of</span> <span class="fire-word">Coimbra</span> <span class="fire-word">to</span> <span class="fire-word">the</span> <span class="fire-word">registers</span> <span class="fire-word">of</span> <span class="rubricated fire-word">Beth Haim</span> — <span class="fire-word">until</span> <span class="fire-word">arriving,</span> <span class="fire-word">in</span> <span class="fire-word">the</span> <span class="fire-word">fullness</span> <span class="fire-word">of</span> <span class="fire-word">time,</span> <span class="fire-word">at</span> <span class="fire-word">the</span> <span class="fire-word">present</span> <span class="fire-word">house.</span>
-    </p>
-  </div>
-
-  <div class="divider">❦ ✦ ❦</div>
-
-  <div class="triptych">
-    <div class="triptych-item">
-      <span class="triptych-label">Founded</span>
-      <div class="triptych-value">London, England<br>Anno Domini MMXXVI</div>
-    </div>
-    <div class="triptych-item">
-      <span class="triptych-label">Discipline</span>
-      <div class="triptych-value">Engineering<br>&amp; Science</div>
-    </div>
-    <div class="triptych-item">
-      <span class="triptych-label">Registered</span>
-      <div class="triptych-value">Martina &amp; Parra<br>Limited · England</div>
-    </div>
-  </div>
-
-  <div class="sealed-section">
-    <div class="section-title">Of the Current Work</div>
-    <p class="decree-text">
-      <span class="fire-word">The</span> <span class="fire-word">principal</span> <span class="fire-word">endeavour</span> <span class="fire-word">of</span> <span class="fire-word">this</span> <span class="fire-word">house</span> <span class="fire-word">is</span> <span class="fire-word">the</span> <span class="fire-word">development</span> <span class="fire-word">of</span> <span class="small-caps rubricated fire-word">Isobar</span> — <span class="fire-word">a</span> <span class="fire-word">process</span> <span class="fire-word">for</span> <span class="fire-word">the</span> <span class="fire-word">generation</span> <span class="fire-word">of</span> <span class="fire-word">electrical</span> <span class="fire-word">energy</span> <span class="fire-word">from</span> <span class="fire-word">pressure</span> <span class="fire-word">differentials,</span> <span class="fire-word">applicable</span> <span class="fire-word">at</span> <span class="fire-word">any</span> <span class="fire-word">scale</span> <span class="fire-word">and</span> <span class="fire-word">in</span> <span class="fire-word">any</span> <span class="fire-word">place</span> <span class="fire-word">where</span> <span class="fire-word">such</span> <span class="fire-word">a</span> <span class="fire-word">differential</span> <span class="fire-word">may</span> <span class="fire-word">be</span> <span class="fire-word">established</span> <span class="fire-word">or</span> <span class="fire-word">maintained.</span> <span class="fire-word">The</span> <span class="fire-word">process</span> <span class="fire-word">is</span> <span class="fire-word">the</span> <span class="fire-word">subject</span> <span class="fire-word">of</span> <span class="fire-word">a</span> <span class="fire-word">patent</span> <span class="fire-word">application</span> <span class="fire-word">before</span> <span class="fire-word">the</span> <span class="small-caps fire-word">United Kingdom Intellectual Property Office,</span> <span class="fire-word">filed</span> <span class="fire-word">in</span> <span class="fire-word">the</span> <span class="fire-word">year</span> <span class="rubricated fire-word">MMXXVI,</span> <span class="fire-word">under</span> <span class="fire-word">the</span> <span class="fire-word">Green</span> <span class="fire-word">Channel</span> <span class="fire-word">for</span> <span class="fire-word">clean</span> <span class="fire-word">energy</span> <span class="fire-word">technologies.</span>
-    </p>
-    <p class="decree-text" style="margin-top:1em;margin-bottom:0;">
-      <span class="rubricated fire-word">As our forebears</span> <span class="fire-word">did</span> <span class="fire-word">not</span> <span class="fire-word">yield</span> <span class="fire-word">when</span> <span class="fire-word">the</span> <span class="fire-word">courts</span> <span class="fire-word">of</span> <span class="fire-word">Castile</span> <span class="fire-word">and</span> <span class="fire-word">Portugal</span> <span class="fire-word">demanded</span> <span class="fire-word">it</span> — <span class="fire-word">neither</span> <span class="fire-word">shall</span> <span class="fire-word">this</span> <span class="fire-word">work</span> <span class="fire-word">yield</span> <span class="fire-word">before</span> <span class="fire-word">the</span> <span class="fire-word">weight</span> <span class="fire-word">of</span> <span class="fire-word">convention.</span>
-    </p>
-  </div>
-
-  <div class="divider">✦ ✦ ✦</div>
-
-  <div class="sigil-section">
-    <span class="sigil">✉</span>
-    <div class="contact-line">For all matters of correspondence</div>
-    <div class="contact-line" style="margin-top:6px;">
-      <a href="mailto:ceo@martinaparra.org">ceo@martinaparra.org</a>
-    </div>
-    <div class="contact-line" style="margin-top:4px;font-size:0.65rem;color:var(--vellum-shadow);">
-      13 Jersey Road · London SW17 9RQ · England
-    </div>
-  </div>
-
-  <div class="royal-signature">
-    <div class="signature-name">Dan Capriles Parra</div>
-    <div class="signature-title">REnvP · Director · Martina &amp; Parra Limited</div>
-    <div class="emblem-seal">
-      <img src="senior_lupus.png" alt="Senior Lupus">
-    </div>
-  </div>
-
-  <div class="folio">fol. I</div>
+<div class="royal-header">
+<div class="regnal-date">In the Year of Our Lord · MMXXVI · London, England</div>
+<div class="royal-title">Martina & Parra</div>
+<div style="font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;color:var(--vellum-shadow);text-transform:uppercase;margin-top:4px">Engineering · Science · Innovation</div>
 </div>
+
+<div class="coat-of-arms-section">
+
+<div class="shield-container">
+<img class="shield-img" src="senior_lupus.png" alt="Senior Lupus Arms">
+<div class="shield-motto">Senior · Lvpvs</div>
+</div>
+
+<div style="flex:1">
+<p class="decree-text drop-cap">
+<span class="rubricated fire-word">Let</span>
+<span class="fire-word">it</span>
+<span class="fire-word">be</span>
+<span class="fire-word">proclaimed</span>
+<span class="fire-word">and</span>
+<span class="fire-word">made</span>
+<span class="fire-word">known</span>
+<span class="fire-word">to</span>
+<span class="fire-word">all</span>
+<span class="fire-word">who</span>
+<span class="fire-word">shall</span>
+<span class="fire-word">read</span>
+<span class="fire-word">these</span>
+<span class="fire-word">presents</span>
+<span class="fire-word">that</span>
+<span class="small-caps fire-word">Abraham</span>
+<span class="small-caps fire-word">Senior</span>
+<span class="fire-word">served</span>
+<span class="fire-word">Their</span>
+<span class="fire-word">Catholic</span>
+<span class="fire-word">Majesties</span>
+<span class="fire-word">Ferdinand</span>
+<span class="fire-word">and</span>
+<span class="fire-word">Isabella</span>
+<span class="fire-word">in</span>
+<span class="fire-word">the</span>
+<span class="fire-word">final</span>
+<span class="fire-word">days</span>
+<span class="fire-word">of</span>
+<span class="fire-word">the</span>
+<span class="fire-word">war</span>
+<span class="fire-word">for</span>
+<span class="fire-word">Granada</span>
+<span class="fire-word">and</span>
+<span class="fire-word">stood</span>
+<span class="fire-word">among</span>
+<span class="fire-word">those</span>
+<span class="fire-word">who</span>
+<span class="fire-word">witnessed</span>
+<span class="fire-word">the</span>
+<span class="fire-word">submission</span>
+<span class="fire-word">of</span>
+<span class="fire-word">the</span>
+<span class="fire-word">Moorish</span>
+<span class="fire-word">king</span>
+<span class="fire-word">and</span>
+<span class="fire-word">the</span>
+<span class="fire-word">restoration</span>
+<span class="fire-word">of</span>
+<span class="fire-word">that</span>
+<span class="fire-word">realm</span>
+<span class="fire-word">to</span>
+<span class="fire-word">the</span>
+<span class="fire-word">Crown</span>
+<span class="fire-word">of</span>
+<span class="fire-word">Castile.</span>
+</p>
+</div>
+</div>
+
+<div class="decree-text">
+
+<p>
+Thereafter in the year of Our Lord MCCCCXCII at the Monastery of Guadalupe he received baptism under the sponsorship of the King himself and was received into royal favour and council. By authority of the Crown it was declared that he and his lineage should be held in the estate of hidalgos and that the descendants of Abraham Senior should possess and enjoy that condition with all honours and privileges belonging thereto for themselves and their heirs in perpetuity.
+</p>
+
+<p>
+And let it further be understood that what has thus been granted under royal authority shall remain firm and perpetual to be held and enjoyed without contradiction or diminution nor altered by any lesser power save only by the sovereign authority of the King of Spain.
+</p>
+
+<p>
+And it is moreover proclaimed that the Crown of Portugal likewise acknowledged the nobility of this lineage and that those charged with the recognition of hidalguia within that realm shall recognise the descendants of Abraham Senior as belonging to that estate and as rightful bearers of the emblems traditions and dignities descending from that house.
+</p>
+
+</div>
+
+<div class="divider">❦ ✦ ❦</div>
+
+<div class="triptych">
+
+<div class="triptych-item">
+<span class="triptych-label">Founded</span>
+<div class="triptych-value">London, England<br>Anno Domini MMXXVI</div>
+</div>
+
+<div class="triptych-item">
+<span class="triptych-label">Discipline</span>
+<div class="triptych-value">Engineering<br>& Science</div>
+</div>
+
+<div class="triptych-item">
+<span class="triptych-label">Registered</span>
+<div class="triptych-value">Martina & Parra<br>Limited · England</div>
+</div>
+
+</div>
+
+<div class="sigil-section">
+<span class="sigil">✉</span>
+<div class="contact-line">For all matters of correspondence</div>
+<div class="contact-line" style="margin-top:6px">
+<a href="mailto:ceo@martinaparra.org">ceo@martinaparra.org</a>
+</div>
+<div class="contact-line" style="margin-top:4px;font-size:.65rem;color:var(--vellum-shadow)">
+13 Jersey Road · London SW17 9RQ · England
+</div>
+</div>
+
+<div class="royal-signature">
+<div class="signature-name">Dan Capriles Parra</div>
+<div class="signature-title">REnvP · Director · Martina & Parra Limited</div>
+<div class="emblem-seal">
+<img src="senior_lupus.png" alt="Senior Lupus">
+</div>
+</div>
+
+<div class="folio">fol. I</div>
+
+</div>
+
 </body>
 </html>
