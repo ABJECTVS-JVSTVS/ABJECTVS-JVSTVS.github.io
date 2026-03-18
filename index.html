@@ -26,29 +26,29 @@
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{
-background:radial-gradient(ellipse at center,#3d2510 0%,#1a0d05 100%);
-font-family:'Cardo',serif;
-color:var(--ink);
-min-height:100vh;
-display:flex;
-flex-direction:column;
-align-items:center;
-padding:40px 20px;
+  background:radial-gradient(ellipse at center,#3d2510 0%,#1a0d05 100%);
+  font-family:'Cardo',serif;
+  color:var(--ink);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:40px 20px;
 }
 
 .manuscript{
-max-width:860px;
-width:100%;
-background-image:linear-gradient(135deg,#f8edd5 0%,#f0ddb0 30%,#eedcb0 60%,#f4e4c0 100%);
-position:relative;
-padding:60px 70px;
-box-shadow:
-0 0 0 2px var(--vellum-shadow),
-0 0 0 6px #8b6914,
-0 0 0 8px #c9a84c,
-0 0 0 12px #8b6914,
-0 20px 80px rgba(0,0,0,0.8),
-inset 0 0 120px rgba(180,130,50,0.15);
+  max-width:860px;
+  width:100%;
+  background-image:linear-gradient(135deg,#f8edd5 0%,#f0ddb0 30%,#eedcb0 60%,#f4e4c0 100%);
+  position:relative;
+  padding:60px 70px;
+  box-shadow:
+    0 0 0 2px var(--vellum-shadow),
+    0 0 0 6px #8b6914,
+    0 0 0 8px #c9a84c,
+    0 0 0 12px #8b6914,
+    0 20px 80px rgba(0,0,0,0.8),
+    inset 0 0 120px rgba(180,130,50,0.15);
 }
 
 .border-outer{position:absolute;inset:14px;border:1.5px solid var(--gold);pointer-events:none}
@@ -64,8 +64,6 @@ inset 0 0 120px rgba(180,130,50,0.15);
 
 .regnal-date{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.3em;color:var(--red);text-transform:uppercase;margin-bottom:10px}
 
-.royal-title{font-family:'UnifrakturMaguntia',cursive;font-size:1.9rem;color:var(--ink-brown);line-height:1.6;margin-bottom:6px}
-
 .coat-of-arms-section{display:flex;gap:40px;align-items:flex-start;margin-bottom:36px}
 
 .shield-container{flex-shrink:0;width:180px;text-align:center}
@@ -75,29 +73,56 @@ inset 0 0 120px rgba(180,130,50,0.15);
 .shield-motto{font-family:'UnifrakturMaguntia',cursive;font-size:1.1rem;color:var(--red);letter-spacing:.05em;margin-top:4px}
 
 .fire-word{display:inline;transition:color .2s ease,text-shadow .2s ease;cursor:default}
-
 .fire-word:hover{
-color:#cc1100!important;
-text-shadow:0 0 6px rgba(220,50,0,.9),0 0 18px rgba(255,100,0,.6),0 0 35px rgba(255,50,0,.3);
+  color:#8b1a1a!important;
+  text-shadow:0 0 4px rgba(180,20,0,.95),0 0 14px rgba(220,60,0,.7),0 0 30px rgba(255,80,0,.4),0 0 55px rgba(255,30,0,.2);
+}
+
+/* ISOBAR title effect */
+.royal-title{
+  font-family:'UnifrakturMaguntia',cursive;
+  font-size:1.9rem;
+  color:var(--ink-brown);
+  line-height:1.6;
+  margin-bottom:6px;
+  cursor:default;
+  transition:color .3s ease, text-shadow .3s ease;
+  text-shadow:1px 1px 0 rgba(0,0,0,0.55);
+}
+.royal-title:hover{
+  color:#0a1a3a;
+  text-shadow:
+    0 0 8px rgba(0,80,255,.95),
+    0 0 20px rgba(0,140,255,.8),
+    0 0 45px rgba(0,180,255,.5),
+    0 0 80px rgba(0,200,255,.25),
+    1px 1px 0 rgba(0,0,0,0.3);
 }
 
 .decree-text{font-family:'Cardo',serif;font-size:1.05rem;line-height:1.9;color:var(--ink-brown);text-align:justify}
-
 .decree-text p{margin-bottom:1.2em}
 
 .drop-cap::first-letter{
-font-family:'UnifrakturMaguntia',cursive;
-font-size:5.5rem;
-float:left;
-line-height:.75;
-margin-right:8px;
-margin-top:8px;
-color:var(--red);
-text-shadow:2px 2px 0 var(--gold);
+  font-family:'UnifrakturMaguntia',cursive;
+  font-size:5.5rem;
+  float:left;
+  line-height:.75;
+  margin-right:8px;
+  margin-top:8px;
+  color:var(--red);
+  text-shadow:2px 2px 0 var(--gold);
 }
 
 .rubricated{color:var(--red);font-style:italic}
 .small-caps{font-variant:small-caps;letter-spacing:.08em}
+
+.archive-ref{
+  font-family:'Cinzel',serif;
+  font-size:.72rem;
+  letter-spacing:.06em;
+  color:var(--blue);
+  font-style:normal;
+}
 
 .divider{text-align:center;margin:28px 0;color:var(--gold);font-size:1.2rem;letter-spacing:.5em}
 
@@ -109,10 +134,6 @@ text-shadow:2px 2px 0 var(--gold);
 .triptych-label{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.2em;color:var(--red);text-transform:uppercase;margin-bottom:6px;display:block}
 
 .triptych-value{font-family:'Cardo',serif;font-size:.9rem;color:var(--ink-brown);line-height:1.5;font-style:italic}
-
-.sealed-section{background:linear-gradient(135deg,rgba(26,45,107,.06),rgba(139,26,26,.04));border:1px solid var(--gold);padding:24px 28px;margin:28px 0;position:relative}
-
-.section-title{font-family:'Cinzel Decorative',serif;font-size:.75rem;letter-spacing:.25em;color:var(--red);text-transform:uppercase;text-align:center;margin-bottom:16px}
 
 .sigil-section{text-align:center;margin-top:36px;padding-top:28px;border-top:1px solid var(--gold)}
 
@@ -135,14 +156,13 @@ text-shadow:2px 2px 0 var(--gold);
 .folio{position:absolute;bottom:24px;right:80px;font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.2em;color:var(--vellum-shadow)}
 
 @media(max-width:600px){
-.manuscript{padding:40px 28px}
-.coat-of-arms-section{flex-direction:column;align-items:center}
-.triptych{grid-template-columns:1fr}
-.triptych-item{border-right:none;border-bottom:.5px solid var(--vellum-shadow);padding:12px 0}
-.triptych-item:last-child{border-bottom:none}
-.drop-cap::first-letter{font-size:3.5rem}
+  .manuscript{padding:40px 28px}
+  .coat-of-arms-section{flex-direction:column;align-items:center}
+  .triptych{grid-template-columns:1fr}
+  .triptych-item{border-right:none;border-bottom:.5px solid var(--vellum-shadow);padding:12px 0}
+  .triptych-item:last-child{border-bottom:none}
+  .drop-cap::first-letter{font-size:3.5rem}
 }
-
 </style>
 </head>
 
@@ -150,148 +170,110 @@ text-shadow:2px 2px 0 var(--gold);
 
 <div class="manuscript">
 
-<div class="border-outer"></div>
-<div class="border-inner"></div>
+  <div class="border-outer"></div>
+  <div class="border-inner"></div>
 
-<div class="corner corner-tl">✦</div>
-<div class="corner corner-tr">✦</div>
-<div class="corner corner-bl">✦</div>
-<div class="corner corner-br">✦</div>
+  <div class="corner corner-tl">✦</div>
+  <div class="corner corner-tr">✦</div>
+  <div class="corner corner-bl">✦</div>
+  <div class="corner corner-br">✦</div>
 
-<div class="royal-header">
-<div class="regnal-date">In the Year of Our Lord · MMXXVI · London, England</div>
-<div class="royal-title">Martina & Parra</div>
-<div style="font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;color:var(--vellum-shadow);text-transform:uppercase;margin-top:4px">Engineering · Science · Innovation</div>
-</div>
+  <div class="royal-header">
+    <div class="regnal-date">In the Year of Our Lord · MMXXVI · London, England</div>
+    <div class="royal-title">Martina & Parra</div>
+    <div style="font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;color:var(--vellum-shadow);text-transform:uppercase;margin-top:4px">Engineering · Science · Innovation</div>
+  </div>
 
-<div class="coat-of-arms-section">
+  <div class="coat-of-arms-section">
 
-<div class="shield-container">
-<img class="shield-img" src="senior_lupus.png" alt="Senior Lupus Arms">
-<div class="shield-motto">Senior · Lvpvs</div>
-</div>
+    <div class="shield-container">
+      <img class="shield-img" src="senior_lupus.png" alt="Senior Lupus Arms">
+      <div class="shield-motto">Senior · Lvpvs</div>
+    </div>
 
-<div style="flex:1">
-<p class="decree-text drop-cap">
-<span class="rubricated fire-word">Let</span>
-<span class="fire-word">it</span>
-<span class="fire-word">be</span>
-<span class="fire-word">proclaimed</span>
-<span class="fire-word">and</span>
-<span class="fire-word">made</span>
-<span class="fire-word">known</span>
-<span class="fire-word">to</span>
-<span class="fire-word">all</span>
-<span class="fire-word">who</span>
-<span class="fire-word">shall</span>
-<span class="fire-word">read</span>
-<span class="fire-word">these</span>
-<span class="fire-word">presents</span>
-<span class="fire-word">that</span>
-<span class="small-caps fire-word">Abraham</span>
-<span class="small-caps fire-word">Senior</span>
-<span class="fire-word">served</span>
-<span class="fire-word">Their</span>
-<span class="fire-word">Catholic</span>
-<span class="fire-word">Majesties</span>
-<span class="fire-word">Ferdinand</span>
-<span class="fire-word">and</span>
-<span class="fire-word">Isabella</span>
-<span class="fire-word">in</span>
-<span class="fire-word">the</span>
-<span class="fire-word">final</span>
-<span class="fire-word">days</span>
-<span class="fire-word">of</span>
-<span class="fire-word">the</span>
-<span class="fire-word">war</span>
-<span class="fire-word">for</span>
-<span class="fire-word">Granada</span>
-<span class="fire-word">and</span>
-<span class="fire-word">stood</span>
-<span class="fire-word">among</span>
-<span class="fire-word">those</span>
-<span class="fire-word">who</span>
-<span class="fire-word">witnessed</span>
-<span class="fire-word">the</span>
-<span class="fire-word">submission</span>
-<span class="fire-word">of</span>
-<span class="fire-word">the</span>
-<span class="fire-word">Moorish</span>
-<span class="fire-word">king</span>
-<span class="fire-word">and</span>
-<span class="fire-word">the</span>
-<span class="fire-word">restoration</span>
-<span class="fire-word">of</span>
-<span class="fire-word">that</span>
-<span class="fire-word">realm</span>
-<span class="fire-word">to</span>
-<span class="fire-word">the</span>
-<span class="fire-word">Crown</span>
-<span class="fire-word">of</span>
-<span class="fire-word">Castile.</span>
-</p>
-</div>
-</div>
+    <div style="flex:1">
+      <p class="decree-text drop-cap">
+        <span class="rubricated fire-word">Be it known</span>
+        <span class="fire-word">that the lineage herein represented descends from</span>
+        <span class="small-caps fire-word">Abraham Senior</span><span class="fire-word">,
+        Grand Rabbi of Castile and principal counsellor to Their Catholic Majesties
+        Fernando and Isabel — he who at the Monastery of Guadalupe, in the month of June
+        of the year</span> <span class="small-caps fire-word">MCCCCXCII</span><span class="fire-word">, received baptism under the sponsorship
+        of the King himself, and was thereafter known as</span>
+        <span class="small-caps fire-word">Fernando Pérez Coronel</span><span class="fire-word">,
+        appointed to the Royal Council with voice, vote, and the annual emolument
+        of thirty thousand maravedís.</span>
+      </p>
+    </div>
 
-<div class="decree-text">
+  </div>
 
-<p>
-Thereafter in the year of Our Lord MCCCCXCII at the Monastery of Guadalupe he received baptism under the sponsorship of the King himself and was received into royal favour and council. By authority of the Crown it was declared that he and his lineage should be held in the estate of hidalgos and that the descendants of Abraham Senior should possess and enjoy that condition with all honours and privileges belonging thereto for themselves and their heirs in perpetuity.
-</p>
+  <div class="decree-text">
 
-<p>
-And let it further be understood that what has thus been granted under royal authority shall remain firm and perpetual to be held and enjoyed without contradiction or diminution nor altered by any lesser power save only by the sovereign authority of the King of Spain.
-</p>
+    <p>
+      <span class="fire-word">And be it further known that</span>
+      <span class="small-caps fire-word">Dom Manuel I</span><span class="fire-word">, King of Portugal,
+      Lord of Guinea and of the Conquest, Navigation and Commerce of Ethiopia, Arabia,
+      Persia and India, did confirm in the year</span> <span class="small-caps fire-word">MCCCCXCIX</span>
+      <span class="fire-word">at Sintra a grant of</span> <em><span class="fire-word">fidalguia</span></em>
+      <span class="fire-word">to Mestre Niculao Coronel, physician to the Royal Court —
+      of the lineage of</span> <em><span class="fire-word">Abrão Rodrigues Coronel do Reino de Espanha</span></em>
+      <span class="fire-word">— as it is recorded in the</span>
+      <span class="archive-ref fire-word">Chancelaria de Dom Manuel I, Livro XVI, folio CVIIIv</span><span class="fire-word">,
+      preserved in the</span> <span class="archive-ref fire-word">Arquivo Nacional Torre do Tombo, Lisbon</span><span class="fire-word">.</span>
+    </p>
 
-<p>
-And it is moreover proclaimed that the Crown of Portugal likewise acknowledged the nobility of this lineage and that those charged with the recognition of hidalguia within that realm shall recognise the descendants of Abraham Senior as belonging to that estate and as rightful bearers of the emblems traditions and dignities descending from that house.
-</p>
+    <p>
+      <span class="fire-word">And let it further be understood that what has thus been granted under royal authority
+      shall remain firm and perpetual — to be held and enjoyed without contradiction or
+      diminution, nor altered by any lesser power, save only by the sovereign authority
+      of the Crown.</span>
+    </p>
 
-</div>
+    <p>
+      <span class="fire-word">And it is moreover proclaimed that those charged with the recognition of</span>
+      <em><span class="fire-word">hidalguia</span></em> <span class="fire-word">within the realm of Portugal shall recognise the descendants
+      of</span> <span class="small-caps fire-word">Abraham Senior</span> <span class="fire-word">as belonging to that estate and as rightful
+      bearers of the emblems, traditions, and dignities descending from that house —
+      the same house that gave to Amsterdam its first Jewish cemetery, and to Curaçao
+      its first congregation.</span>
+    </p>
 
-<div class="divider">❦ ✦ ❦</div>
+  </div>
 
-<div class="triptych">
+  <div class="divider">❦ ✦ ❦</div>
 
-<div class="triptych-item">
-<span class="triptych-label">Founded</span>
-<div class="triptych-value">London, England<br>Anno Domini MMXXVI</div>
-</div>
+  <div class="triptych">
 
-<div class="triptych-item">
-<span class="triptych-label">Discipline</span>
-<div class="triptych-value">Engineering<br>& Science</div>
-</div>
+    <div class="triptych-item">
+      <span class="triptych-label">Founded</span>
+      <div class="triptych-value">London, England<br>Anno Domini MMXXII</div>
+    </div>
 
-<div class="triptych-item">
-<span class="triptych-label">Registered</span>
-<div class="triptych-value">Martina & Parra<br>Limited · England</div>
-</div>
+    <div class="triptych-item">
+      <span class="triptych-label">Discipline</span>
+      <div class="triptych-value">Engineering<br>& Science</div>
+    </div>
 
-</div>
+    <div class="triptych-item">
+      <span class="triptych-label">Registered</span>
+      <div class="triptych-value">Martina & Parra<br>Limited · England</div>
+    </div>
 
-<div class="sigil-section">
-<span class="sigil">✉</span>
-<div class="contact-line">For all matters of correspondence</div>
-<div class="contact-line" style="margin-top:6px">
-<a href="mailto:ceo@martinaparra.org">ceo@martinaparra.org</a>
-</div>
-<div class="contact-line" style="margin-top:4px;font-size:.65rem;color:var(--vellum-shadow)">
-13 Jersey Road · London SW17 9RQ · England
-</div>
-</div>
+  </div>
 
-<div class="royal-signature">
-<div class="signature-name">Dan Capriles Parra</div>
-<div class="signature-title">REnvP · Director · Martina & Parra Limited</div>
-<div class="emblem-seal">
-<img src="senior_lupus.png" alt="Senior Lupus">
-</div>
-</div>
+  <div class="sigil-section">
+    <span class="sigil">✉</span>
+    <div class="contact-line">For all matters of correspondence</div>
+    <div class="contact-line" style="margin-top:6px">
+      <a href="/cdn-cgi/l/email-protection#accfc9c3ecc1cdded8c5c2cddccddedecd82c3decb"><span class="__cf_email__" data-cfemail="1271777d527f7360667b7c7362736060733c7d6075">[email&#160;protected]</span></a>
+    </div>
+    <div class="contact-line" style="margin-top:4px;font-size:.65rem;color:var(--vellum-shadow)">
+      England
+    </div>
+  </div>
 
-<div class="folio">fol. I</div>
-
-</div>
-
-</body>
-</html>
+  <div class="royal-signature">
+    <div class="signature-name">Dan Capriles Parra</div>
+    <div class="signature-title">REnvP · Director · Martina & Parra Limited</div>
+    <div class="emblem-seal
