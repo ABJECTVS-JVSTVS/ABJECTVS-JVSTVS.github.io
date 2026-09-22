@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISOBAR — Martina &amp; Parra</title>
+<meta name="description" content="ISOBAR: a closed hydraulic process for the generation of electrical energy from pressure differentials, by Martina & Parra. UK patent application GB2603682.2.">
+<link rel="icon" href="senior_lupus.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="codex.css">
+
+<style>
+.rig { margin-top: 1.6rem; }
+.page-head { padding: 56px 0 24px; }
+.page-head h1 { font-size: clamp(2.6rem, 6vw, 4.2rem); margin: .2rem 0 .2rem; letter-spacing: .01em; }
+.model { font-size: 1.3rem; font-style: italic; color: var(--ink-faded); }
+.hero-plate { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 2.6rem; align-items: center; padding-bottom: 48px; border-bottom: 1px solid var(--rule); }
+.big-figure { font-size: clamp(3.4rem, 8vw, 5.6rem); line-height: 1; color: var(--sanguine); }
+.big-figure small { font-size: .35em; color: var(--ink); }
+.target { font-family: var(--hand); color: var(--ink-faded); font-size: 1.1rem; margin-top: .4rem; }
+.steps { list-style: none; counter-reset: s; margin-top: 1.4rem; display: grid; gap: 1.1rem; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 2.4rem 1fr; gap: .8rem; }
+.steps li::before { content: counter(s, upper-roman); font-family: var(--hand); color: var(--sanguine); font-size: 1.2rem; }
+.steps b { font-weight: 400; font-style: italic; }
+.uses { display: grid; grid-template-columns: max-content 1fr; gap: .45rem 1.2rem; margin-top: 1.2rem; }
+.uses dt { font-style: italic; color: var(--sanguine); }
+.ledger { width: 100%; max-width: 34rem; border-collapse: collapse; margin-top: 1.2rem; font-size: 1rem; }
+.ledger th, .ledger td { text-align: left; padding: .4rem .8rem .4rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.ledger th { font-weight: 400; font-style: italic; color: var(--ink-faded); width: 45%; }
+.ledger .n { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.climates th { width: auto; }
+.note { font-size: .95rem; color: var(--ink-faded); font-style: italic; margin-top: 1rem; }
+@media (max-width: 780px) { .hero-plate { grid-template-columns: 1fr; } }
+</style>
+</head>
+
+<body>
+<!-- shared SVG defs: paper edge, pencil wobble, hatching -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="rough" x="-3%" y="-3%" width="106%" height="106%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="5" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="18" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="pencil" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="g"/>
+      <feDisplacementMap in="SourceGraphic" in2="g" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="smudge"><feGaussianBlur stdDeviation="6"/></filter>
+    <pattern id="hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
+      <line x1="0" y1="0" x2="0" y2="5" stroke="#3b2a1c" stroke-width=".8" stroke-opacity=".8"/>
+    </pattern>
+    <pattern id="hatch-x" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#3b2a1c" stroke-width=".7" stroke-opacity=".75"/>
+      <line x1="0" y1="0" x2="6" y2="0" stroke="#3b2a1c" stroke-width=".6" stroke-opacity=".55"/>
+    </pattern>
+  </defs>
+</svg>
+<div class="sheet">
+
+  <nav class="nav" aria-label="Main">
+    <a class="nav-brand" href="index.html">
+      <img src="senior_lupus.png" alt="">
+      <span>Martina &amp; Parra</span>
+    </a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="isobar.html" aria-current="page">ISOBAR</a></li>
+      <li><a href="hygrostream.html">HYGROSTREAM</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-head">
+    <span class="folio-mark">f. 9r</span>
+    <h1>ISOBAR</h1>
+    <p class="model">A closed hydraulic process for the generation of electrical energy from pressure differentials</p>
+  </header>
+
+  <div class="hero-plate">
+    <figure>
+      <svg class="drawing trace" viewBox="0 0 600 400" role="img"
+         aria-label="Sepia sketch of a hydraulic conduit: intake funnel, turbine chamber, U-bend and rising cone">
+     <g filter="url(#pencil)">
+      <!-- graphite shadow on the ground -->
+      <ellipse class="shade" cx="200" cy="384" rx="170" ry="9" filter="url(#smudge)"/>
+      <ellipse class="shade" cx="470" cy="384" rx="110" ry="6" filter="url(#smudge)"/>
+
+      <!-- ground line -->
+      <path class="thin" d="M20 382 L585 382"/>
+      <path class="thin" d="M40 382 l-10 10 M70 382 l-10 10 M100 382 l-10 10 M130 382 l-10 10 M160 382 l-10 10 M190 382 l-10 10 M220 382 l-10 10 M250 382 l-10 10 M280 382 l-10 10 M310 382 l-10 10"/>
+
+      <!-- pencil shading -->
+      <path class="hatch" d="M470 214 L560 218 L560 280 L470 225 Z"/>
+      <path class="hatch" d="M402 216 L470 216 L470 225 L402 225 Z"/>
+      <path class="hatch" d="M262 318 A82 82 0 0 1 98 318 L128 318 A52 52 0 0 0 232 318 Z"/>
+      <path class="hatch" d="M98 318 L56 60 L74 62 L112 318 Z"/>
+      <path class="hatch-x" d="M252 225 L262 225 L262 318 L252 318 Z"/>
+      <path class="hatch" d="M346 228 A32 32 0 0 0 400 214 A28 28 0 0 1 346 228 Z"/>
+
+      <!-- intake funnel -->
+      <ellipse class="ink" cx="560" cy="210" rx="12" ry="70"/>
+      <path class="ink" d="M560 140 L470 195 M560 280 L470 225"/>
+      <path class="thin" d="M561 142 L471 196" opacity=".6"/>
+
+      <!-- pipe to turbine -->
+      <path class="ink" d="M470 195 L402 195 M470 225 L402 225"/>
+
+      <!-- turbine chamber, rotor turns -->
+      <circle class="ink" cx="370" cy="210" r="32"/>
+      <circle class="thin" cx="370.8" cy="209.4" r="32.6" opacity=".6"/>
+      <g class="spin" style="transform-origin:370px 210px">
+        <circle class="ink" cx="370" cy="210" r="5"/>
+        <path class="thin" d="M370 205 Q384 190 392 196 M375 210 Q392 220 386 232 M370 215 Q356 230 348 224 M365 210 Q348 200 354 188"/>
+      </g>
+
+      <!-- conduit: pipe, U-bend, rising cone -->
+      <path class="ink" d="M338 195 L244 195 Q232 195 232 207 L232 318 A52 52 0 0 1 128 318 L150 60"/>
+      <path class="ink" d="M338 225 L262 225 L262 318 A82 82 0 0 1 98 318 L56 60"/>
+      <path class="thin" d="M339 196.5 L245 196 M97 317 L55 61" opacity=".55"/>
+      <ellipse class="ink" cx="103" cy="60" rx="47" ry="10"/>
+
+      <!-- construction lines -->
+      <path class="thin" d="M180 318 L180 400 M100 318 L262 318" stroke-dasharray="3 5"/>
+      <path class="thin" d="M470 300 L560 300 M470 294 L470 306 M560 294 L560 306"/>
+     </g>
+
+      <!-- water flow, red chalk, keeps moving -->
+      <path class="flow" d="M545 210 L480 210 M335 210 L250 210 L247 214 L247 318 A67 67 0 0 1 113 318 L102 80"/>
+      <path class="chalk-fill" d="M480 210 l8 -4 l0 8 z M102 80 l-4 8 l8 -1 z"/>
+
+      <!-- notes -->
+      <text x="478" y="325">bocca</text>
+      <text x="340" y="265">ruota</text>
+      <text x="274" y="352">sifone</text>
+      <text x="160" y="40" class="red">l'acqua sale</text>
+      <text x="0" y="0" transform="translate(560 110) scale(-1 1)">pressione</text>
+    </svg>
+    </figure>
+    <div>
+      <p class="big-figure">1–3 <small>MW per module</small></p>
+      <p class="target">Design target, subject to engineering validation and a physical proof of concept.</p>
+      <p style="margin-top:1.4rem">ISOBAR guides water through a closed conduit shaped to create and use differences in pressure. The controlled movement of the water drives a turbine and generator.</p>
+      <p>Modules are designed to be installed alone or in groups, where site conditions and permits allow.</p>
+    </div>
+  </div>
+
+  <section class="folio" aria-labelledby="offer">
+    <div>
+      <span class="folio-mark">f. 9v</span>
+      <h2 id="offer">What it is designed to offer</h2>
+      <dl class="uses">
+        <dt>Modular</dt><dd>Repeatable units, so a project can start small and grow unit by unit</dd>
+        <dt>Local</dt><dd>Generation near the point of use, for utilities, industrial sites, ports and islands</dd>
+        <dt>Predictable</dt><dd>Long-term energy contracts at a fixed price, structured under the applicable regulation</dd>
+      </dl>
+      <p class="note">These are design aims. They become claims only once measured and independently verified.</p>
+    </div>
+    <aside class="marginalia" aria-hidden="true">
+      <p>l'energia è l'economia</p>
+    </aside>
+  </section>
+
+  <section class="folio" aria-labelledby="poc">
+    <div>
+      <span class="folio-mark">f. 10r</span>
+      <h2 id="poc">Proof of concept</h2>
+      <p>The next step is a physical test rig at 1:50 to 1:100 scale, instrumented to measure pressure, flow, torque and electrical power, with an independent review of the results.</p>
+      <figure class="plate rig">
+        <svg class="drawing trace" viewBox="0 0 560 320" role="img" aria-label="Sepia sketch of the ISOBAR proof-of-concept test rig: header tank, pipework with pressure gauges and a flow meter, a small turbine driving a generator through a torque sensor, a return tank and a data logger">
+<g filter="url(#pencil)">
+<ellipse class="shade" cx="290" cy="296" rx="250" ry="8" filter="url(#smudge)"/>
+<path class="thin" d="M20 292 L545 292"/>
+<rect class="ink" x="40" y="40" width="90" height="60"/><path class="hatch" d="M42 62 h86 v36 h-86 Z"/><path class="thin" d="M42 62 h86"/>
+<path class="ink" d="M48 100 L44 292 M122 100 L126 292 M46 170 L124 170 M46 170 L124 230 M124 170 L46 230"/>
+<path class="ink" d="M78 100 L78 250 Q78 262 90 262 L300 262 M92 100 L92 240 Q92 248 100 248 L300 248"/>
+<path class="ink" d="M150 248 L150 222"/><circle class="ink" cx="150" cy="210" r="13"/><circle class="thin" cx="150" cy="210" r="9"/>
+<g class="swing" style="transform-origin:150px 210px"><path class="chalk" d="M150 210 L157 203"/></g>
+<text x="142" y="190" class="small">P1</text>
+<path class="ink" d="M250 248 L250 222"/><circle class="ink" cx="250" cy="210" r="13"/><circle class="thin" cx="250" cy="210" r="9"/>
+<g class="swing" style="transform-origin:250px 210px"><path class="chalk" d="M250 210 L257 203"/></g>
+<text x="242" y="190" class="small">P2</text>
+<rect class="ink" x="190" y="242" width="28" height="26"/><path class="hatch-x" d="M204 242 h14 v26 h-14 Z"/><text x="186" y="284" class="small">Q</text>
+<circle class="ink" cx="330" cy="255" r="30"/><path class="hatch" d="M330 285 A30 30 0 0 0 360 255 L352 255 A22 22 0 0 1 330 277 Z"/>
+<g class="spin" style="transform-origin:330px 255px"><circle class="ink" cx="330" cy="255" r="5"/><path class="thin" d="M330 250 Q342 236 352 244 M335 255 Q350 266 342 278 M330 260 Q318 274 308 266 M325 255 Q310 244 318 232"/></g>
+<path class="ink" d="M300 248 L306 248 M300 262 L304 262"/>
+<path class="ink" d="M360 252 L400 252 M360 258 L400 258"/>
+<rect class="ink" x="376" y="244" width="16" height="22"/><text x="370" y="238" class="small">coppia</text>
+<rect class="ink" x="400" y="232" width="56" height="46" rx="4"/><path class="hatch-x" d="M428 232 h28 v46 h-28 Z"/><path class="thin" d="M406 240 v30 M414 240 v30 M422 240 v30"/>
+<path class="ink" d="M330 285 L330 292"/><path class="ink" d="M318 282 L318 292 M342 282 L342 292" opacity=".0"/>
+<rect class="ink" x="470" y="236" width="70" height="56"/><path class="hatch" d="M472 256 h66 v34 h-66 Z"/><path class="thin" d="M472 256 h66"/>
+<path class="ink" d="M356 272 Q380 290 470 284"/>
+<path class="thin" d="M505 236 L505 20 L85 20 L85 40" stroke-dasharray="5 4"/><circle class="ink" cx="505" cy="200" r="10"/><path class="thin" d="M499 200 L511 200 M505 194 L505 206"/>
+<rect class="ink" x="400" y="120" width="80" height="54" rx="3"/><path class="thin" d="M408 160 L420 146 L432 152 L444 136 L456 142 L470 128" /><path class="thin" d="M404 180 L476 180 L486 190 L394 190 Z"/>
+<path class="thin" d="M150 197 Q150 150 400 150 M250 197 Q260 160 400 158 M204 242 Q220 200 400 166 M384 244 Q384 210 410 190 M428 232 Q440 210 440 190" stroke-dasharray="1 3"/>
+</g>
+<path class="flow" d="M85 70 L85 255 L300 255"/><path class="flow" d="M360 280 Q385 292 470 286"/>
+<text x="44" y="32">serbatoio</text><text x="300" y="214">turbina</text><text x="400" y="306">generatore</text><text x="404" y="112">misura</text><text x="478" y="312">ritorno</text>
+<text x="0" y="0" transform="translate(360 60) scale(-1 1)">prova, poi afferma</text>
+</svg>
+        <figcaption>Tav. V. Test rig, schematic: header tank, gauges P1 and P2, flow meter Q, turbine, torque sensor, generator and data logger.</figcaption>
+      </figure>
+    </div>
+    <aside class="marginalia" aria-hidden="true">
+      <p>prova, poi afferma</p>
+    </aside>
+  </section>
+
+  <section class="folio" aria-labelledby="status">
+    <div>
+      <span class="folio-mark">f. 10v</span>
+      <h2 id="status">Development status</h2>
+      <table class="ledger">
+        <tbody>
+          <tr><th>Patent</th><td>UK application GB2603682.2, filed 18 February 2026</td></tr>
+          <tr><th>Applicants</th><td>Dan Capriles Parra and Martina &amp; Parra Limited</td></tr>
+          <tr><th>Target output</th><td>1–3 MW per module</td></tr>
+          <tr><th>Work completed</th><td>Concept geometry, claim structure, prior-art analysis and CFD studies</td></tr>
+          <tr><th>Next step</th><td>Test protocol, turbine selection and a scale proof-of-concept rig</td></tr>
+          <tr><th>Commercial models</th><td>Feasibility and site studies, project development, licensing, module supply and long-term energy contracts</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Performance depends on turbine selection, structural design and measured results. No output is claimed until demonstrated.</p>
+    </div>
+    <aside class="marginalia" aria-hidden="true">
+      <p>GB2603682.2</p>
+    </aside>
+  </section>
+
+  <footer class="colophon">
+    <span>Martina &amp; Parra Limited · Registered in England and Wales, company no. 16205541<br>Registered office: 13 Jersey Road, London SW17 9RQ</span>
+    <a href="mailto:ceo@martinaparra.org">ceo@martinaparra.org</a>
+  </footer>
+
+</div>
+</body>
+</html>
