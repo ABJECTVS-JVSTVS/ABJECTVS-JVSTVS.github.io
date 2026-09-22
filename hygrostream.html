@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HYGROSTREAM — Martina &amp; Parra</title>
+<meta name="description" content="HYGROSTREAM Optimus Beast Flow-8X (OB16): a large-scale atmospheric water generator by Martina & Parra, with a design target of 44 m³ of drinking water per day.">
+<link rel="icon" href="senior_lupus.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="codex.css">
+
+<style>
+.page-head { padding: 56px 0 24px; }
+.page-head h1 { font-size: clamp(2.6rem, 6vw, 4.2rem); margin: .2rem 0 .2rem; letter-spacing: .01em; }
+.model { font-size: 1.3rem; font-style: italic; color: var(--ink-faded); }
+.hero-plate { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 2.6rem; align-items: center; padding-bottom: 48px; border-bottom: 1px solid var(--rule); }
+.big-figure { font-size: clamp(3.4rem, 8vw, 5.6rem); line-height: 1; color: var(--sanguine); }
+.big-figure small { font-size: .35em; color: var(--ink); }
+.target { font-family: var(--hand); color: var(--ink-faded); font-size: 1.1rem; margin-top: .4rem; }
+.steps { list-style: none; counter-reset: s; margin-top: 1.4rem; display: grid; gap: 1.1rem; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 2.4rem 1fr; gap: .8rem; }
+.steps li::before { content: counter(s, upper-roman); font-family: var(--hand); color: var(--sanguine); font-size: 1.2rem; }
+.steps b { font-weight: 400; font-style: italic; }
+.uses { display: grid; grid-template-columns: max-content 1fr; gap: .45rem 1.2rem; margin-top: 1.2rem; }
+.uses dt { font-style: italic; color: var(--sanguine); }
+.ledger { width: 100%; max-width: 34rem; border-collapse: collapse; margin-top: 1.2rem; font-size: 1rem; }
+.ledger th, .ledger td { text-align: left; padding: .4rem .8rem .4rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.ledger th { font-weight: 400; font-style: italic; color: var(--ink-faded); width: 45%; }
+.ledger .n { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.climates th { width: auto; }
+.note { font-size: .95rem; color: var(--ink-faded); font-style: italic; margin-top: 1rem; }
+@media (max-width: 780px) { .hero-plate { grid-template-columns: 1fr; } }
+</style>
+</head>
+
+<body>
+<!-- shared SVG defs: paper edge, pencil wobble, hatching -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="rough" x="-3%" y="-3%" width="106%" height="106%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="5" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="18" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="pencil" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="g"/>
+      <feDisplacementMap in="SourceGraphic" in2="g" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="smudge"><feGaussianBlur stdDeviation="6"/></filter>
+    <pattern id="hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
+      <line x1="0" y1="0" x2="0" y2="5" stroke="#3b2a1c" stroke-width=".8" stroke-opacity=".8"/>
+    </pattern>
+    <pattern id="hatch-x" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#3b2a1c" stroke-width=".7" stroke-opacity=".75"/>
+      <line x1="0" y1="0" x2="6" y2="0" stroke="#3b2a1c" stroke-width=".6" stroke-opacity=".55"/>
+    </pattern>
+  </defs>
+</svg>
+<div class="sheet">
+
+  <nav class="nav" aria-label="Main">
+    <a class="nav-brand" href="index.html">
+      <img src="senior_lupus.png" alt="">
+      <span>Martina &amp; Parra</span>
+    </a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="isobar.html">ISOBAR</a></li>
+      <li><a href="hygrostream.html" aria-current="page">HYGROSTREAM</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-head">
+    <span class="folio-mark">f. 6r</span>
+    <h1>HYGROSTREAM</h1>
+    <p class="model">Optimus Beast Flow-8X · OB16 · the Tree of Life</p>
+  </header>
+
+  <div class="hero-plate">
+    <figure>
+      <svg class="drawing trace" viewBox="0 0 600 610" role="img" aria-label="Sepia elevation of the HYGROSTREAM Optimus Beast tree: a glazed central trunk on a two-tier plinth, ten branches ending in air intakes, ten hanging condensation pods, an exhaust spire at the crown, fields and a reservoir around it">
+<g filter="url(#pencil)">
+<ellipse class="shade" cx="310" cy="532" rx="230" ry="12" filter="url(#smudge)"/>
+<path class="thin" d="M10 530 L590 530"/>
+<path class="thin" d="M20 545 L250 545 M350 545 L450 545 M14 555 L230 555 M370 555 L464 555 M8 565 L210 565 M390 565 L478 565 M2 575 L190 575 M410 575 L492 575 M-4 585 L170 585 M430 585 L506 585 M-10 595 L150 595 M450 595 L520 595" opacity=".5"/>
+<g class="sway" style="transform-origin:130px 570px"><path class="leaf" d="M24 545 q-2 -5 -5 -6 M24 545 q2 -6 5 -6 M38 545 q-2 -5 -5 -6 M38 545 q2 -6 5 -6 M52 545 q-2 -5 -5 -6 M52 545 q2 -6 5 -6 M66 545 q-2 -5 -5 -6 M66 545 q2 -6 5 -6 M80 545 q-2 -5 -5 -6 M80 545 q2 -6 5 -6 M94 545 q-2 -5 -5 -6 M94 545 q2 -6 5 -6 M108 545 q-2 -5 -5 -6 M108 545 q2 -6 5 -6 M122 545 q-2 -5 -5 -6 M122 545 q2 -6 5 -6 M136 545 q-2 -5 -5 -6 M136 545 q2 -6 5 -6 M150 545 q-2 -5 -5 -6 M150 545 q2 -6 5 -6 M164 545 q-2 -5 -5 -6 M164 545 q2 -6 5 -6 M178 545 q-2 -5 -5 -6 M178 545 q2 -6 5 -6 M192 545 q-2 -5 -5 -6 M192 545 q2 -6 5 -6 M206 545 q-2 -5 -5 -6 M206 545 q2 -6 5 -6 M220 545 q-2 -5 -5 -6 M220 545 q2 -6 5 -6 M234 545 q-2 -5 -5 -6 M234 545 q2 -6 5 -6 M18 555 q-2 -5 -5 -6 M18 555 q2 -6 5 -6 M32 555 q-2 -5 -5 -6 M32 555 q2 -6 5 -6 M46 555 q-2 -5 -5 -6 M46 555 q2 -6 5 -6 M60 555 q-2 -5 -5 -6 M60 555 q2 -6 5 -6 M74 555 q-2 -5 -5 -6 M74 555 q2 -6 5 -6 M88 555 q-2 -5 -5 -6 M88 555 q2 -6 5 -6 M102 555 q-2 -5 -5 -6 M102 555 q2 -6 5 -6 M116 555 q-2 -5 -5 -6 M116 555 q2 -6 5 -6 M130 555 q-2 -5 -5 -6 M130 555 q2 -6 5 -6 M144 555 q-2 -5 -5 -6 M144 555 q2 -6 5 -6 M158 555 q-2 -5 -5 -6 M158 555 q2 -6 5 -6 M172 555 q-2 -5 -5 -6 M172 555 q2 -6 5 -6 M186 555 q-2 -5 -5 -6 M186 555 q2 -6 5 -6 M200 555 q-2 -5 -5 -6 M200 555 q2 -6 5 -6 M214 555 q-2 -5 -5 -6 M214 555 q2 -6 5 -6 M12 565 q-2 -5 -5 -6 M12 565 q2 -6 5 -6 M26 565 q-2 -5 -5 -6 M26 565 q2 -6 5 -6 M40 565 q-2 -5 -5 -6 M40 565 q2 -6 5 -6 M54 565 q-2 -5 -5 -6 M54 565 q2 -6 5 -6 M68 565 q-2 -5 -5 -6 M68 565 q2 -6 5 -6 M82 565 q-2 -5 -5 -6 M82 565 q2 -6 5 -6 M96 565 q-2 -5 -5 -6 M96 565 q2 -6 5 -6 M110 565 q-2 -5 -5 -6 M110 565 q2 -6 5 -6 M124 565 q-2 -5 -5 -6 M124 565 q2 -6 5 -6 M138 565 q-2 -5 -5 -6 M138 565 q2 -6 5 -6 M152 565 q-2 -5 -5 -6 M152 565 q2 -6 5 -6 M166 565 q-2 -5 -5 -6 M166 565 q2 -6 5 -6 M180 565 q-2 -5 -5 -6 M180 565 q2 -6 5 -6 M194 565 q-2 -5 -5 -6 M194 565 q2 -6 5 -6 M6 575 q-2 -5 -5 -6 M6 575 q2 -6 5 -6 M20 575 q-2 -5 -5 -6 M20 575 q2 -6 5 -6 M34 575 q-2 -5 -5 -6 M34 575 q2 -6 5 -6 M48 575 q-2 -5 -5 -6 M48 575 q2 -6 5 -6 M62 575 q-2 -5 -5 -6 M62 575 q2 -6 5 -6 M76 575 q-2 -5 -5 -6 M76 575 q2 -6 5 -6 M90 575 q-2 -5 -5 -6 M90 575 q2 -6 5 -6 M104 575 q-2 -5 -5 -6 M104 575 q2 -6 5 -6 M118 575 q-2 -5 -5 -6 M118 575 q2 -6 5 -6 M132 575 q-2 -5 -5 -6 M132 575 q2 -6 5 -6 M146 575 q-2 -5 -5 -6 M146 575 q2 -6 5 -6 M160 575 q-2 -5 -5 -6 M160 575 q2 -6 5 -6 M174 575 q-2 -5 -5 -6 M174 575 q2 -6 5 -6 M0 585 q-2 -5 -5 -6 M0 585 q2 -6 5 -6 M14 585 q-2 -5 -5 -6 M14 585 q2 -6 5 -6 M28 585 q-2 -5 -5 -6 M28 585 q2 -6 5 -6 M42 585 q-2 -5 -5 -6 M42 585 q2 -6 5 -6 M56 585 q-2 -5 -5 -6 M56 585 q2 -6 5 -6 M70 585 q-2 -5 -5 -6 M70 585 q2 -6 5 -6 M84 585 q-2 -5 -5 -6 M84 585 q2 -6 5 -6 M98 585 q-2 -5 -5 -6 M98 585 q2 -6 5 -6 M112 585 q-2 -5 -5 -6 M112 585 q2 -6 5 -6 M126 585 q-2 -5 -5 -6 M126 585 q2 -6 5 -6 M140 585 q-2 -5 -5 -6 M140 585 q2 -6 5 -6 M154 585 q-2 -5 -5 -6 M154 585 q2 -6 5 -6 M-6 595 q-2 -5 -5 -6 M-6 595 q2 -6 5 -6 M8 595 q-2 -5 -5 -6 M8 595 q2 -6 5 -6 M22 595 q-2 -5 -5 -6 M22 595 q2 -6 5 -6 M36 595 q-2 -5 -5 -6 M36 595 q2 -6 5 -6 M50 595 q-2 -5 -5 -6 M50 595 q2 -6 5 -6 M64 595 q-2 -5 -5 -6 M64 595 q2 -6 5 -6 M78 595 q-2 -5 -5 -6 M78 595 q2 -6 5 -6 M92 595 q-2 -5 -5 -6 M92 595 q2 -6 5 -6 M106 595 q-2 -5 -5 -6 M106 595 q2 -6 5 -6 M120 595 q-2 -5 -5 -6 M120 595 q2 -6 5 -6 M134 595 q-2 -5 -5 -6 M134 595 q2 -6 5 -6"/></g>
+<ellipse class="ink" cx="530" cy="556" rx="62" ry="14"/><path class="hatch" d="M468 556 A62 14 0 0 0 592 556 L592 562 A62 14 0 0 1 468 562 Z"/><path class="ink" d="M468 556 L468 562 A62 14 0 0 0 592 562 L592 556"/>
+<path class="ink paper" d="M122 524 A178 20 0 0 0 478 524 L478 498 A178 20 0 0 1 122 498 Z"/><ellipse class="ink paper" cx="300" cy="498" rx="178" ry="20"/><path class="thin" d="M124.7 523.5 L124.7 507.5 M130.7 526.2 L130.7 510.2 M140.0 528.8 L140.0 512.8 M152.4 531.2 L152.4 515.2 M167.7 533.4 L167.7 517.4 M185.6 535.3 L185.6 519.3 M205.7 537.0 L205.7 521.0 M227.6 538.3 L227.6 522.3 M250.9 539.2 L250.9 523.2 M275.2 539.8 L275.2 523.8 M300.0 540.0 L300.0 524.0 M324.8 539.8 L324.8 523.8 M349.1 539.2 L349.1 523.2 M372.4 538.3 L372.4 522.3 M394.3 537.0 L394.3 521.0 M414.4 535.3 L414.4 519.3 M432.3 533.4 L432.3 517.4 M447.6 531.2 L447.6 515.2 M460.0 528.8 L460.0 512.8 M469.3 526.2 L469.3 510.2 M475.3 523.5 L475.3 507.5" opacity=".6"/><path class="hatch" d="M300 544 A178 20 0 0 0 478 524 L478 498 A178 20 0 0 1 300 518 Z"/>
+<path class="ink paper" d="M162 494 A138 16 0 0 0 438 494 L438 466 A138 16 0 0 1 162 466 Z"/><ellipse class="ink paper" cx="300" cy="466" rx="138" ry="16"/><path class="thin" d="M164.1 492.8 L164.1 474.8 M168.8 494.9 L168.8 476.9 M176.0 497.0 L176.0 479.0 M185.6 498.9 L185.6 480.9 M197.4 500.7 L197.4 482.7 M211.3 502.3 L211.3 484.3 M226.9 503.6 L226.9 485.6 M243.9 504.6 L243.9 486.6 M262.0 505.4 L262.0 487.4 M280.8 505.8 L280.8 487.8 M300.0 506.0 L300.0 488.0 M319.2 505.8 L319.2 487.8 M338.0 505.4 L338.0 487.4 M356.1 504.6 L356.1 486.6 M373.1 503.6 L373.1 485.6 M388.7 502.3 L388.7 484.3 M402.6 500.7 L402.6 482.7 M414.4 498.9 L414.4 480.9 M424.0 497.0 L424.0 479.0 M431.2 494.9 L431.2 476.9 M435.9 492.8 L435.9 474.8" opacity=".6"/><path class="hatch" d="M300 510 A138 16 0 0 0 438 494 L438 466 A138 16 0 0 1 300 482 Z"/>
+<path class="ink" d="M178 470 C188 400 282 360 286 250 M422 470 C412 400 318 360 314 250 M200 470 C210 400 284 360 288 250 M400 470 C390 400 316 360 312 250 M222 470 C232 400 286 360 290 250 M378 470 C368 400 314 360 310 250 M246 470 C256 400 288 360 292 250 M354 470 C344 400 312 360 308 250 M268 470 C278 400 290 360 294 250 M332 470 C322 400 310 360 306 250"/>
+<path class="hatch" d="M332 470 C340 400 312 360 306 250 L314 250 C320 360 356 400 400 470 Z" opacity=".7"/>
+<rect class="ink paper" x="289" y="150" width="22" height="330"/>
+<path class="thin" d="M289 170 L311 170 M289 192 L311 192 M289 214 L311 214 M289 236 L311 236 M289 258 L311 258 M289 280 L311 280 M289 302 L311 302 M289 324 L311 324 M289 346 L311 346 M289 368 L311 368 M289 390 L311 390 M289 412 L311 412 M289 434 L311 434 M289 456 L311 456 M289 478 L311 478" opacity=".6"/>
+<path class="hatch" d="M303 150 h8 v330 h-8 Z" opacity=".6"/>
+<path d="M290 368 Q165 372 78 318" style="fill:none;stroke:var(--ink);stroke-width:12;stroke-linecap:round"/>
+<path d="M290 368 Q165 372 78 318" style="fill:none;stroke:var(--paper);stroke-width:9.4;stroke-linecap:round"/>
+<path class="thin" d="M290.0 370.5 L277.6 370.8 L265.4 370.7 L253.4 370.4 L241.5 369.8 L229.9 368.9 L218.4 367.7 L207.2 366.2 L196.1 364.4 L185.2 362.4 L174.5 360.0 L164.0 357.4 L153.7 354.4 L143.6 351.2 L133.6 347.7 L123.9 343.9 L114.3 339.8 L105.0 335.4 L95.8 330.7 L86.8 325.8 L78.0 320.5" opacity=".6"/>
+<path d="M290 336 Q170 312 104 246" style="fill:none;stroke:var(--ink);stroke-width:12;stroke-linecap:round"/>
+<path d="M290 336 Q170 312 104 246" style="fill:none;stroke:var(--paper);stroke-width:9.4;stroke-linecap:round"/>
+<path class="thin" d="M290.0 338.5 L278.1 336.0 L266.5 333.3 L255.2 330.4 L244.2 327.2 L233.4 323.9 L222.9 320.3 L212.6 316.6 L202.6 312.6 L192.9 308.4 L183.5 304.0 L174.3 299.4 L165.4 294.6 L156.8 289.6 L148.5 284.3 L140.4 278.9 L132.6 273.2 L125.0 267.4 L117.7 261.3 L110.7 255.0 L104.0 248.5" opacity=".6"/>
+<path d="M292 304 Q205 262 150 178" style="fill:none;stroke:var(--ink);stroke-width:12;stroke-linecap:round"/>
+<path d="M292 304 Q205 262 150 178" style="fill:none;stroke:var(--paper);stroke-width:9.4;stroke-linecap:round"/>
+<path class="thin" d="M292.0 306.5 L283.4 302.2 L274.9 297.7 L266.6 293.0 L258.5 288.0 L250.5 282.9 L242.7 277.5 L235.0 272.0 L227.5 266.2 L220.2 260.2 L213.0 254.0 L206.0 247.6 L199.1 241.0 L192.4 234.2 L185.9 227.1 L179.5 219.9 L173.3 212.4 L167.2 204.8 L161.3 196.9 L155.6 188.8 L150.0 180.5" opacity=".6"/>
+<path d="M294 272 Q236 214 192 128" style="fill:none;stroke:var(--ink);stroke-width:12;stroke-linecap:round"/>
+<path d="M294 272 Q236 214 192 128" style="fill:none;stroke:var(--paper);stroke-width:9.4;stroke-linecap:round"/>
+<path class="thin" d="M294.0 274.5 L288.2 268.6 L282.5 262.6 L276.9 256.5 L271.4 250.2 L265.9 243.8 L260.5 237.2 L255.1 230.5 L249.8 223.6 L244.6 216.6 L239.5 209.5 L234.4 202.2 L229.4 194.8 L224.5 187.3 L219.7 179.6 L214.9 171.8 L210.2 163.8 L205.5 155.7 L200.9 147.4 L196.4 139.0 L192.0 130.5" opacity=".6"/>
+<path d="M296 242 Q276 176 242 88" style="fill:none;stroke:var(--ink);stroke-width:12;stroke-linecap:round"/>
+<path d="M296 242 Q276 176 242 88" style="fill:none;stroke:var(--paper);stroke-width:9.4;stroke-linecap:round"/>
+<path class="thin" d="M296.0 244.5 L294.0 237.8 L291.9 231.1 L289.7 224.2 L287.4 217.2 L285.1 210.1 L282.7 202.9 L280.3 195.6 L277.8 188.2 L275.2 180.6 L272.5 173.0 L269.8 165.2 L267.0 157.4 L264.1 149.4 L261.1 141.3 L258.1 133.1 L255.0 124.8 L251.9 116.4 L248.7 107.9 L245.4 99.2 L242.0 90.5" opacity=".6"/>
+<path d="M310 368 Q435 372 522 318" style="fill:none;stroke:var(--ink);stroke-width:12;stroke-linecap:round"/>
+<path d="M310 368 Q435 372 522 318" style="fill:none;stroke:var(--paper);stroke-width:9.4;stroke-linecap:round"/>
+<path class="thin" d="M310.0 370.5 L322.4 370.8 L334.6 370.7 L346.6 370.4 L358.5 369.8 L370.1 368.9 L381.6 367.7 L392.8 366.2 L403.9 364.4 L414.8 362.4 L425.5 360.0 L436.0 357.4 L446.3 354.4 L456.4 351.2 L466.4 347.7 L476.1 343.9 L485.7 339.8 L495.0 335.4 L504.2 330.7 L513.2 325.8 L522.0 320.5" opacity=".6"/>
+<path d="M310 336 Q430 312 496 246" style="fill:none;stroke:var(--ink);stroke-width:12;stroke-linecap:round"/>
+<path d="M310 336 Q430 312 496 246" style="fill:none;stroke:var(--paper);stroke-width:9.4;stroke-linecap:round"/>
+<path class="thin" d="M310.0 338.5 L321.9 336.0 L333.5 333.3 L344.8 330.4 L355.8 327.2 L366.6 323.9 L377.1 320.3 L387.4 316.6 L397.4 312.6 L407.1 308.4 L416.5 304.0 L425.7 299.4 L434.6 294.6 L443.2 289.6 L451.5 284.3 L459.6 278.9 L467.4 273.2 L475.0 267.4 L482.3 261.3 L489.3 255.0 L496.0 248.5" opacity=".6"/>
+<path d="M308 304 Q395 262 450 178" style="fill:none;stroke:var(--ink);stroke-width:12;stroke-linecap:round"/>
+<path d="M308 304 Q395 262 450 178" style="fill:none;stroke:var(--paper);stroke-width:9.4;stroke-linecap:round"/>
+<path class="thin" d="M308.0 306.5 L316.6 302.2 L325.1 297.7 L333.4 293.0 L341.5 288.0 L349.5 282.9 L357.3 277.5 L365.0 272.0 L372.5 266.2 L379.8 260.2 L387.0 254.0 L394.0 247.6 L400.9 241.0 L407.6 234.2 L414.1 227.1 L420.5 219.9 L426.7 212.4 L432.8 204.8 L438.7 196.9 L444.4 188.8 L450.0 180.5" opacity=".6"/>
+<path d="M306 272 Q364 214 408 128" style="fill:none;stroke:var(--ink);stroke-width:12;stroke-linecap:round"/>
+<path d="M306 272 Q364 214 408 128" style="fill:none;stroke:var(--paper);stroke-width:9.4;stroke-linecap:round"/>
+<path class="thin" d="M306.0 274.5 L311.8 268.6 L317.5 262.6 L323.1 256.5 L328.6 250.2 L334.1 243.8 L339.5 237.2 L344.9 230.5 L350.2 223.6 L355.4 216.6 L360.5 209.5 L365.6 202.2 L370.6 194.8 L375.5 187.3 L380.3 179.6 L385.1 171.8 L389.8 163.8 L394.5 155.7 L399.1 147.4 L403.6 139.0 L408.0 130.5" opacity=".6"/>
+<path d="M304 242 Q324 176 358 88" style="fill:none;stroke:var(--ink);stroke-width:12;stroke-linecap:round"/>
+<path d="M304 242 Q324 176 358 88" style="fill:none;stroke:var(--paper);stroke-width:9.4;stroke-linecap:round"/>
+<path class="thin" d="M304.0 244.5 L306.0 237.8 L308.1 231.1 L310.3 224.2 L312.6 217.2 L314.9 210.1 L317.3 202.9 L319.7 195.6 L322.2 188.2 L324.8 180.6 L327.5 173.0 L330.2 165.2 L333.0 157.4 L335.9 149.4 L338.9 141.3 L341.9 133.1 L345.0 124.8 L348.1 116.4 L351.3 107.9 L354.6 99.2 L358.0 90.5" opacity=".6"/>
+<g transform="translate(78 318) rotate(-148.2)"><path class="ink paper" d="M-10 -12 L22 -13 Q34 -13 34 0 Q34 13 22 13 L-10 12 Q-18 0 -10 -12 Z"/><ellipse class="ink paper" cx="30" cy="0" rx="5" ry="13"/><path class="thin" d="M27 -9 L33 -9 M26 -5 L35 -5 M26 -1 L35 -1 M26 3 L35 3 M27 7 L33 7"/><path class="hatch" d="M-12 2 L22 4 Q30 5 30 11 L22 13 L-10 12 Z"/></g>
+<g transform="translate(104 246) rotate(-135.0)"><path class="ink paper" d="M-10 -12 L22 -13 Q34 -13 34 0 Q34 13 22 13 L-10 12 Q-18 0 -10 -12 Z"/><ellipse class="ink paper" cx="30" cy="0" rx="5" ry="13"/><path class="thin" d="M27 -9 L33 -9 M26 -5 L35 -5 M26 -1 L35 -1 M26 3 L35 3 M27 7 L33 7"/><path class="hatch" d="M-12 2 L22 4 Q30 5 30 11 L22 13 L-10 12 Z"/></g>
+<g transform="translate(150 178) rotate(-123.2)"><path class="ink paper" d="M-10 -12 L22 -13 Q34 -13 34 0 Q34 13 22 13 L-10 12 Q-18 0 -10 -12 Z"/><ellipse class="ink paper" cx="30" cy="0" rx="5" ry="13"/><path class="thin" d="M27 -9 L33 -9 M26 -5 L35 -5 M26 -1 L35 -1 M26 3 L35 3 M27 7 L33 7"/><path class="hatch" d="M-12 2 L22 4 Q30 5 30 11 L22 13 L-10 12 Z"/></g>
+<g transform="translate(192 128) rotate(-117.1)"><path class="ink paper" d="M-10 -12 L22 -13 Q34 -13 34 0 Q34 13 22 13 L-10 12 Q-18 0 -10 -12 Z"/><ellipse class="ink paper" cx="30" cy="0" rx="5" ry="13"/><path class="thin" d="M27 -9 L33 -9 M26 -5 L35 -5 M26 -1 L35 -1 M26 3 L35 3 M27 7 L33 7"/><path class="hatch" d="M-12 2 L22 4 Q30 5 30 11 L22 13 L-10 12 Z"/></g>
+<g transform="translate(242 88) rotate(-111.1)"><path class="ink paper" d="M-10 -12 L22 -13 Q34 -13 34 0 Q34 13 22 13 L-10 12 Q-18 0 -10 -12 Z"/><ellipse class="ink paper" cx="30" cy="0" rx="5" ry="13"/><path class="thin" d="M27 -9 L33 -9 M26 -5 L35 -5 M26 -1 L35 -1 M26 3 L35 3 M27 7 L33 7"/><path class="hatch" d="M-12 2 L22 4 Q30 5 30 11 L22 13 L-10 12 Z"/></g>
+<g transform="translate(522 318) rotate(-31.8)"><path class="ink paper" d="M-10 -12 L22 -13 Q34 -13 34 0 Q34 13 22 13 L-10 12 Q-18 0 -10 -12 Z"/><ellipse class="ink paper" cx="30" cy="0" rx="5" ry="13"/><path class="thin" d="M27 -9 L33 -9 M26 -5 L35 -5 M26 -1 L35 -1 M26 3 L35 3 M27 7 L33 7"/><path class="hatch" d="M-12 2 L22 4 Q30 5 30 11 L22 13 L-10 12 Z"/></g>
+<g transform="translate(496 246) rotate(-45.0)"><path class="ink paper" d="M-10 -12 L22 -13 Q34 -13 34 0 Q34 13 22 13 L-10 12 Q-18 0 -10 -12 Z"/><ellipse class="ink paper" cx="30" cy="0" rx="5" ry="13"/><path class="thin" d="M27 -9 L33 -9 M26 -5 L35 -5 M26 -1 L35 -1 M26 3 L35 3 M27 7 L33 7"/><path class="hatch" d="M-12 2 L22 4 Q30 5 30 11 L22 13 L-10 12 Z"/></g>
+<g transform="translate(450 178) rotate(-56.8)"><path class="ink paper" d="M-10 -12 L22 -13 Q34 -13 34 0 Q34 13 22 13 L-10 12 Q-18 0 -10 -12 Z"/><ellipse class="ink paper" cx="30" cy="0" rx="5" ry="13"/><path class="thin" d="M27 -9 L33 -9 M26 -5 L35 -5 M26 -1 L35 -1 M26 3 L35 3 M27 7 L33 7"/><path class="hatch" d="M-12 2 L22 4 Q30 5 30 11 L22 13 L-10 12 Z"/></g>
+<g transform="translate(408 128) rotate(-62.9)"><path class="ink paper" d="M-10 -12 L22 -13 Q34 -13 34 0 Q34 13 22 13 L-10 12 Q-18 0 -10 -12 Z"/><ellipse class="ink paper" cx="30" cy="0" rx="5" ry="13"/><path class="thin" d="M27 -9 L33 -9 M26 -5 L35 -5 M26 -1 L35 -1 M26 3 L35 3 M27 7 L33 7"/><path class="hatch" d="M-12 2 L22 4 Q30 5 30 11 L22 13 L-10 12 Z"/></g>
+<g transform="translate(358 88) rotate(-68.9)"><path class="ink paper" d="M-10 -12 L22 -13 Q34 -13 34 0 Q34 13 22 13 L-10 12 Q-18 0 -10 -12 Z"/><ellipse class="ink paper" cx="30" cy="0" rx="5" ry="13"/><path class="thin" d="M27 -9 L33 -9 M26 -5 L35 -5 M26 -1 L35 -1 M26 3 L35 3 M27 7 L33 7"/><path class="hatch" d="M-12 2 L22 4 Q30 5 30 11 L22 13 L-10 12 Z"/></g>
+<path class="thin" d="M95.8 333.2 L95.8 338.2"/>
+<rect class="ink paper" x="86.8" y="338.2" width="18" height="7" rx="2"/>
+<path class="ink paper" d="M80.8 345.2 L110.8 345.2 A15 15 0 0 1 80.8 345.2 Z"/>
+<path class="hatch" d="M82.8 352.2 L108.8 352.2 A13 8 0 0 1 82.8 352.2 Z"/>
+<path class="thin" d="M117.7 263.8 L117.7 268.8"/>
+<rect class="ink paper" x="108.7" y="268.8" width="18" height="7" rx="2"/>
+<path class="ink paper" d="M102.7 275.8 L132.7 275.8 A15 15 0 0 1 102.7 275.8 Z"/>
+<path class="hatch" d="M104.7 282.8 L130.7 282.8 A13 8 0 0 1 104.7 282.8 Z"/>
+<path class="thin" d="M161.3 199.4 L161.3 204.4"/>
+<rect class="ink paper" x="152.3" y="204.4" width="18" height="7" rx="2"/>
+<path class="ink paper" d="M146.3 211.4 L176.3 211.4 A15 15 0 0 1 146.3 211.4 Z"/>
+<path class="hatch" d="M148.3 218.4 L174.3 218.4 A13 8 0 0 1 148.3 218.4 Z"/>
+<path class="thin" d="M200.9 149.9 L200.9 154.9"/>
+<rect class="ink paper" x="191.9" y="154.9" width="18" height="7" rx="2"/>
+<path class="ink paper" d="M185.9 161.9 L215.9 161.9 A15 15 0 0 1 185.9 161.9 Z"/>
+<path class="hatch" d="M187.9 168.9 L213.9 168.9 A13 8 0 0 1 187.9 168.9 Z"/>
+<path class="thin" d="M248.7 110.4 L248.7 115.4"/>
+<rect class="ink paper" x="239.7" y="115.4" width="18" height="7" rx="2"/>
+<path class="ink paper" d="M233.7 122.4 L263.7 122.4 A15 15 0 0 1 233.7 122.4 Z"/>
+<path class="hatch" d="M235.7 129.4 L261.7 129.4 A13 8 0 0 1 235.7 129.4 Z"/>
+<path class="thin" d="M504.2 333.2 L504.2 338.2"/>
+<rect class="ink paper" x="495.2" y="338.2" width="18" height="7" rx="2"/>
+<path class="ink paper" d="M489.2 345.2 L519.2 345.2 A15 15 0 0 1 489.2 345.2 Z"/>
+<path class="hatch" d="M491.2 352.2 L517.2 352.2 A13 8 0 0 1 491.2 352.2 Z"/>
+<path class="thin" d="M482.3 263.8 L482.3 268.8"/>
+<rect class="ink paper" x="473.3" y="268.8" width="18" height="7" rx="2"/>
+<path class="ink paper" d="M467.3 275.8 L497.3 275.8 A15 15 0 0 1 467.3 275.8 Z"/>
+<path class="hatch" d="M469.3 282.8 L495.3 282.8 A13 8 0 0 1 469.3 282.8 Z"/>
+<path class="thin" d="M438.7 199.4 L438.7 204.4"/>
+<rect class="ink paper" x="429.7" y="204.4" width="18" height="7" rx="2"/>
+<path class="ink paper" d="M423.7 211.4 L453.7 211.4 A15 15 0 0 1 423.7 211.4 Z"/>
+<path class="hatch" d="M425.7 218.4 L451.7 218.4 A13 8 0 0 1 425.7 218.4 Z"/>
+<path class="thin" d="M399.1 149.9 L399.1 154.9"/>
+<rect class="ink paper" x="390.1" y="154.9" width="18" height="7" rx="2"/>
+<path class="ink paper" d="M384.1 161.9 L414.1 161.9 A15 15 0 0 1 384.1 161.9 Z"/>
+<path class="hatch" d="M386.1 168.9 L412.1 168.9 A13 8 0 0 1 386.1 168.9 Z"/>
+<path class="thin" d="M351.3 110.4 L351.3 115.4"/>
+<rect class="ink paper" x="342.3" y="115.4" width="18" height="7" rx="2"/>
+<path class="ink paper" d="M336.3 122.4 L366.3 122.4 A15 15 0 0 1 336.3 122.4 Z"/>
+<path class="hatch" d="M338.3 129.4 L364.3 129.4 A13 8 0 0 1 338.3 129.4 Z"/>
+<path class="ink paper" d="M284 152 L316 152 L312 96 L300 58 L288 96 Z"/>
+<path class="thin" d="M288.0 104 L312.0 104 M288.0 111 L312.0 111 M288.0 118 L312.0 118 M288.0 125 L312.0 125 M288.0 132 L312.0 132 M288.0 139 L312.0 139 M288.0 146 L312.0 146"/>
+<path class="hatch" d="M300 58 L312 96 L316 152 L300 152 Z"/>
+<g class="sway" style="transform-origin:300px 300px"><path class="leaf" d="M272.7 294.3 q3 -5 6 -1 q2 -4 5 1 M262.6 255.7 q3 -5 6 -1 q2 -4 5 1 M258.5 187.1 q3 -5 6 -1 q2 -4 5 1 M349.9 181.4 q3 -5 6 -1 q2 -4 5 1 M314.2 218.9 q3 -5 6 -1 q2 -4 5 1 M269.2 274.6 q3 -5 6 -1 q2 -4 5 1 M259.0 185.1 q3 -5 6 -1 q2 -4 5 1 M252.0 190.0 q3 -5 6 -1 q2 -4 5 1 M275.8 298.7 q3 -5 6 -1 q2 -4 5 1 M256.3 243.0 q3 -5 6 -1 q2 -4 5 1 M283.8 253.7 q3 -5 6 -1 q2 -4 5 1 M340.1 237.2 q3 -5 6 -1 q2 -4 5 1 M264.2 159.7 q3 -5 6 -1 q2 -4 5 1 M344.6 223.3 q3 -5 6 -1 q2 -4 5 1 M269.4 291.9 q3 -5 6 -1 q2 -4 5 1 M338.1 192.8 q3 -5 6 -1 q2 -4 5 1 M285.7 281.7 q3 -5 6 -1 q2 -4 5 1 M263.5 264.6 q3 -5 6 -1 q2 -4 5 1 M259.8 253.5 q3 -5 6 -1 q2 -4 5 1 M320.2 292.5 q3 -5 6 -1 q2 -4 5 1 M334.3 225.5 q3 -5 6 -1 q2 -4 5 1 M269.8 172.5 q3 -5 6 -1 q2 -4 5 1 M257.1 285.5 q3 -5 6 -1 q2 -4 5 1 M272.0 186.6 q3 -5 6 -1 q2 -4 5 1 M251.2 201.5 q3 -5 6 -1 q2 -4 5 1 M276.7 213.5 q3 -5 6 -1 q2 -4 5 1 M339.1 176.3 q3 -5 6 -1 q2 -4 5 1 M316.3 296.2 q3 -5 6 -1 q2 -4 5 1 M270.2 265.0 q3 -5 6 -1 q2 -4 5 1 M280.0 152.0 q3 -5 6 -1 q2 -4 5 1 M326.4 201.3 q3 -5 6 -1 q2 -4 5 1 M267.0 215.3 q3 -5 6 -1 q2 -4 5 1 M273.2 211.5 q3 -5 6 -1 q2 -4 5 1 M259.5 162.8 q3 -5 6 -1 q2 -4 5 1 M260.7 228.1 q3 -5 6 -1 q2 -4 5 1 M348.0 159.4 q3 -5 6 -1 q2 -4 5 1 M251.7 171.1 q3 -5 6 -1 q2 -4 5 1 M324.4 202.7 q3 -5 6 -1 q2 -4 5 1 M346.5 150.4 q3 -5 6 -1 q2 -4 5 1 M333.6 181.5 q3 -5 6 -1 q2 -4 5 1 M337.5 155.0 q3 -5 6 -1 q2 -4 5 1 M346.5 263.9 q3 -5 6 -1 q2 -4 5 1 M349.0 237.0 q3 -5 6 -1 q2 -4 5 1 M267.8 295.5 q3 -5 6 -1 q2 -4 5 1 M285.0 396.9 q-3 -4 -6 -1 M285.0 396.9 q3 -4 6 -1 M282.7 361.0 q-3 -4 -6 -1 M282.7 361.0 q3 -4 6 -1 M312.5 415.1 q-3 -4 -6 -1 M312.5 415.1 q3 -4 6 -1 M286.9 390.2 q-3 -4 -6 -1 M286.9 390.2 q3 -4 6 -1 M284.7 331.6 q-3 -4 -6 -1 M284.7 331.6 q3 -4 6 -1 M312.1 413.3 q-3 -4 -6 -1 M312.1 413.3 q3 -4 6 -1 M285.2 432.7 q-3 -4 -6 -1 M285.2 432.7 q3 -4 6 -1 M283.9 380.2 q-3 -4 -6 -1 M283.9 380.2 q3 -4 6 -1 M317.5 301.1 q-3 -4 -6 -1 M317.5 301.1 q3 -4 6 -1 M313.3 448.4 q-3 -4 -6 -1 M313.3 448.4 q3 -4 6 -1 M316.5 312.7 q-3 -4 -6 -1 M316.5 312.7 q3 -4 6 -1 M317.7 382.6 q-3 -4 -6 -1 M317.7 382.6 q3 -4 6 -1 M314.9 404.2 q-3 -4 -6 -1 M314.9 404.2 q3 -4 6 -1 M313.9 453.4 q-3 -4 -6 -1 M313.9 453.4 q3 -4 6 -1 M317.5 363.5 q-3 -4 -6 -1 M317.5 363.5 q3 -4 6 -1 M314.2 431.3 q-3 -4 -6 -1 M314.2 431.3 q3 -4 6 -1 M286.9 331.3 q-3 -4 -6 -1 M286.9 331.3 q3 -4 6 -1 M316.4 343.0 q-3 -4 -6 -1 M316.4 343.0 q3 -4 6 -1 M315.7 458.2 q-3 -4 -6 -1 M315.7 458.2 q3 -4 6 -1 M317.0 457.9 q-3 -4 -6 -1 M317.0 457.9 q3 -4 6 -1 M314.5 344.4 q-3 -4 -6 -1 M314.5 344.4 q3 -4 6 -1 M315.0 339.3 q-3 -4 -6 -1 M315.0 339.3 q3 -4 6 -1 M286.9 340.0 q-3 -4 -6 -1 M286.9 340.0 q3 -4 6 -1 M316.8 358.9 q-3 -4 -6 -1 M316.8 358.9 q3 -4 6 -1"/></g>
+<circle class="ink" cx="150" cy="514" r="2"/><path class="ink" d="M150 516 L150 521.9 L147 530 M150 521.9 L153 530 M150 515.6 L146 520.1 M150 515.6 L154 520.1"/><circle class="ink" cx="470" cy="514" r="2"/><path class="ink" d="M470 516 L470 521.9 L467 530 M470 521.9 L473 530 M470 515.6 L466 520.1 M470 515.6 L474 520.1"/><circle class="ink" cx="438" cy="516" r="2"/><path class="ink" d="M438 518 L438 522.8 L435 530 M438 522.8 L441 530 M438 517.2 L434 521.2 M438 517.2 L442 521.2"/>
+</g>
+<path class="flow" d="M20.2 282.1 L44.0 296.9"/><path class="chalk-fill" d="M45.7 298.0 L40.2 289.8 L36.0 296.6 Z"/>
+<path class="flow" d="M55.9 197.9 L75.7 217.7"/><path class="chalk-fill" d="M77.1 219.1 L73.6 209.9 L67.9 215.6 Z"/>
+<path class="flow" d="M112.8 121.1 L128.1 144.5"/><path class="chalk-fill" d="M129.2 146.2 L127.6 136.5 L120.9 140.9 Z"/>
+<path class="flow" d="M161.0 67.5 L173.8 92.4"/><path class="chalk-fill" d="M174.7 94.2 L174.2 84.3 L167.0 88.0 Z"/>
+<path class="flow" d="M217.5 24.6 L227.6 50.7"/><path class="chalk-fill" d="M228.3 52.6 L228.8 42.7 L221.3 45.6 Z"/>
+<path class="flow" d="M579.8 282.1 L556.0 296.9"/><path class="chalk-fill" d="M554.3 298.0 L564.0 296.6 L559.8 289.8 Z"/>
+<path class="flow" d="M544.1 197.9 L524.3 217.7"/><path class="chalk-fill" d="M522.9 219.1 L532.1 215.6 L526.4 209.9 Z"/>
+<path class="flow" d="M487.2 121.1 L471.9 144.5"/><path class="chalk-fill" d="M470.8 146.2 L479.1 140.9 L472.4 136.5 Z"/>
+<path class="flow" d="M439.0 67.5 L426.2 92.4"/><path class="chalk-fill" d="M425.3 94.2 L433.0 88.0 L425.8 84.3 Z"/>
+<path class="flow" d="M382.5 24.6 L372.4 50.7"/><path class="chalk-fill" d="M371.7 52.6 L378.7 45.6 L371.2 42.7 Z"/>
+<path class="flow" d="M300 170 L300 470"/>
+<path class="flow-soft" d="M292 50 q-6 -10 0 -20 t0 -20 M300 46 q6 -10 0 -20 t0 -20 M308 50 q6 -10 0 -20 t0 -20"/>
+<path class="flow-soft" d="M86.8 353.2 q3 -2 6 0 t6 0 t6 0"/>
+<text x="95.8" y="367.2" text-anchor="middle" class="num">1</text>
+<path class="flow-soft" d="M108.7 283.8 q3 -2 6 0 t6 0 t6 0"/>
+<text x="117.7" y="297.8" text-anchor="middle" class="num">2</text>
+<path class="flow-soft" d="M152.3 219.4 q3 -2 6 0 t6 0 t6 0"/>
+<text x="161.3" y="233.4" text-anchor="middle" class="num">3</text>
+<path class="flow-soft" d="M191.9 169.9 q3 -2 6 0 t6 0 t6 0"/>
+<text x="200.9" y="183.9" text-anchor="middle" class="num">4</text>
+<path class="flow-soft" d="M239.7 130.4 q3 -2 6 0 t6 0 t6 0"/>
+<text x="248.7" y="144.4" text-anchor="middle" class="num">5</text>
+<path class="flow-soft" d="M495.2 353.2 q3 -2 6 0 t6 0 t6 0"/>
+<text x="504.2" y="367.2" text-anchor="middle" class="num">6</text>
+<path class="flow-soft" d="M473.3 283.8 q3 -2 6 0 t6 0 t6 0"/>
+<text x="482.3" y="297.8" text-anchor="middle" class="num">7</text>
+<path class="flow-soft" d="M429.7 219.4 q3 -2 6 0 t6 0 t6 0"/>
+<text x="438.7" y="233.4" text-anchor="middle" class="num">8</text>
+<path class="flow-soft" d="M390.1 169.9 q3 -2 6 0 t6 0 t6 0"/>
+<text x="399.1" y="183.9" text-anchor="middle" class="num">9</text>
+<path class="flow-soft" d="M342.3 130.4 q3 -2 6 0 t6 0 t6 0"/>
+<text x="351.3" y="144.4" text-anchor="middle" class="num">10</text>
+<path class="flow-soft" d="M478 556 q6 -3 12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0"/>
+<text x="322" y="22" class="red">aria secca</text>
+<text x="8" y="420" class="red">aria calda</text><text x="8" y="436" class="red">e umida</text>
+<text x="456" y="420">condensa</text><path class="thin" d="M454 416 L372 316" stroke-dasharray="2 3"/>
+<text x="326" y="396">acqua</text>
+<text x="500" y="590">serbatoio</text>
+<text x="40" y="598">campi</text>
+<text x="0" y="0" transform="translate(130 30) scale(-1 1)">dall'aria l'acqua</text>
+</svg>
+    </figure>
+    <div>
+      <p class="big-figure">44 <small>m³ of water a day</small></p>
+      <p class="target">Model result for ten modules running around the clock in La Guajira mean conditions. To be confirmed on an instrumented prototype.</p>
+      <p style="margin-top:1.4rem">A large-scale atmospheric water generator built from ten refrigerated modules, called BEASTs. Each one cools humid air in two stages to condense its water, and recovers energy from every stream before letting it go: the cold, dry air leaving the machine and the cold water it has just made.</p>
+      <p>Built for places where water is scarce but the air is not dry: hot, humid coasts, islands and ports.</p>
+    </div>
+  </div>
+
+  <section class="folio" aria-labelledby="how">
+    <div>
+      <span class="folio-mark">f. 6v</span>
+      <h2 id="how">How it works</h2>
+      <ol class="steps">
+        <li><span><b>Air intake.</b> Each module draws in about 4.5 m³ of hot ambient air per second at the branch tips.</span></li>
+        <li><span><b>Heat recovery.</b> The incoming air is pre-cooled by the cold, dry air leaving the machine, in a recovery exchanger (RevB2). Some water already condenses here.</span></li>
+        <li><span><b>Stage 1.</b> Refrigerated plates at about 8 °C, with some 26 m² of cold surface per stage, condense most of the water.</span></li>
+        <li><span><b>Stage 2.</b> A second, smaller stage finishes drying the air.</span></li>
+        <li><span><b>Dry air reused.</b> The cold, dry air passes back through the recovery exchanger and then over the refrigeration condenser, lowering its temperature so the compressor uses less electricity. Only then is it released through the crown.</span></li>
+        <li><span><b>Cold water reused.</b> The condensate leaves at about 8 °C. Before storage it flows through a stratified tank (CTRB) that uses its coldness to help cool the refrigeration circuit at the hottest hours.</span></li>
+        <li><span><b>Treatment and storage.</b> The water is filtered and treated to drinking-water standard, then stored at the base or sent to a reservoir.</span></li>
+      </ol>
+      <p style="margin-top:1.2rem">Airflow is adjusted hour by hour. When the air is hot and relatively dry, the machine slows down; when each kilowatt-hour yields more water, it speeds up. The aim is the most water for the least energy, not the most water at any cost.</p>
+    </div>
+    <aside class="marginalia" aria-hidden="true">
+      <p>dall'aria nasce l'acqua</p>
+      <p><span class="mirror">dall'acqua la vita</span></p>
+    </aside>
+  </section>
+
+  <section class="folio" aria-labelledby="prod">
+    <div>
+      <span class="folio-mark">f. 7r</span>
+      <h2 id="prod">Production by climate</h2>
+      <p>Model results for one module in six design conditions, three for Cali and three for La Guajira. All six exceed the original target of 1 m³ per module in 12 hours.</p>
+      <table class="ledger climates">
+        <thead><tr><th>Condition</th><th class="n">L per hour</th><th class="n">m³ in 12 h</th></tr></thead>
+        <tbody>
+          <tr><td>Cali · CAL-M</td><td class="n">118</td><td class="n">1.42</td></tr>
+          <tr><td>Cali · CAL-H</td><td class="n">156</td><td class="n">1.87</td></tr>
+          <tr><td>Cali · CAL-D</td><td class="n">133</td><td class="n">1.60</td></tr>
+          <tr><td>La Guajira · GUA-M</td><td class="n">186</td><td class="n">2.23</td></tr>
+          <tr><td>La Guajira · GUA-H</td><td class="n">221</td><td class="n">2.65</td></tr>
+          <tr><td>La Guajira · GUA-D</td><td class="n">168</td><td class="n">2.01</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Per module, at full airflow. Reduced thermal model; not yet measured.</p>
+    </div>
+    <aside class="marginalia" aria-hidden="true">
+      <p>Cali · La Guajira</p>
+    </aside>
+  </section>
+
+  <section class="folio" aria-labelledby="for">
+    <div>
+      <span class="folio-mark">f. 7v</span>
+      <h2 id="for">Where it is for</h2>
+      <dl class="uses">
+        <dt>Utilities</dt><dd>Extra, resilient supply for regional water systems and municipalities</dd>
+        <dt>Coasts</dt><dd>Ports, islands and maritime platforms that depend on transported water</dd>
+        <dt>Industry</dt><dd>Industrial and agricultural sites that need predictable water on site</dd>
+        <dt>Communities</dt><dd>Settlements such as <a class="text-link" href="research.html#mpsci">MP-SCI</a>, and humanitarian and civil-protection work</dd>
+      </dl>
+    </div>
+    <aside class="marginalia" aria-hidden="true">
+      <p>La Guajira</p>
+    </aside>
+  </section>
+
+  <section class="folio" aria-labelledby="status">
+    <div>
+      <span class="folio-mark">f. 8r</span>
+      <h2 id="status">Development status</h2>
+      <table class="ledger">
+        <tbody>
+          <tr><th>Model</th><td>Optimus Beast Flow-8X (OB16)</td></tr>
+          <tr><th>Output target</th><td>44 m³ per day per tree (10 modules, 24 h, La Guajira mean conditions)</td></tr>
+          <tr><th>Modules per tree</th><td>10</td></tr>
+          <tr><th>Airflow per module</th><td>About 4.5 m³/s nominal, modulated hourly</td></tr>
+          <tr><th>Cold surface</th><td>17 plates and about 26 m² per stage, at about 8 °C</td></tr>
+          <tr><th>Design climates</th><td>Cali and La Guajira, Colombia</td></tr>
+          <tr><th>Work completed</th><td>CFD campaign and thermal model closed for six design conditions (phases P0–P4); 12-hour dynamic model with a real Riohacha day</td></tr>
+          <tr><th>In progress</th><td>Phase P5: refrigeration, hydraulic and electrical specification; compressor and refrigerant selection</td></tr>
+          <tr><th>Next step</th><td>Prototype and test: production, power, pressure and drainage, compared against the model</td></tr>
+          <tr><th>Protection</th><td>European patent application in preparation</td></tr>
+          <tr><th>Commercial models</th><td>Sale, lease, water as a service, operation and maintenance</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Figures are design targets until measured and independently verified.</p>
+    </div>
+    <aside class="marginalia" aria-hidden="true">
+      <p>prova, poi afferma</p>
+    </aside>
+  </section>
+
+  <footer class="colophon">
+    <span>Martina &amp; Parra Limited · Registered in England and Wales, company no. 16205541<br>Registered office: 13 Jersey Road, London SW17 9RQ</span>
+    <a href="mailto:ceo@martinaparra.org">ceo@martinaparra.org</a>
+  </footer>
+
+</div>
+</body>
+</html>
