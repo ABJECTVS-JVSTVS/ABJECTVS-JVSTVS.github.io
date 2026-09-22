@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Martina &amp; Parra — Engineering and research</title>
-<meta name="description" content="Martina & Parra is an engineering and research firm founded in London in 2022, designing environmental and energy solutions for public, commercial, agricultural and industrial clients across the UK and the European Union.">
+<title>Martina &amp; Parra — Energy and water technologies</title>
+<meta name="description" content="Martina & Parra develops modular technologies for energy and water: ISOBAR hydraulic energy and HYGROSTREAM atmospheric water generation. Founded in London, moving to the European Union.">
 <link rel="icon" href="senior_lupus.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,6 +38,10 @@
 .approach svg { width: 72px; height: 72px; margin-bottom: .6rem; }
 .approach p { font-size: 1.02rem; }
 
+.platforms { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 2.6rem; margin-top: 1.4rem; }
+.platforms svg { max-width: 260px; margin-bottom: .6rem; }
+.platforms h3 { font-size: 1.6rem; }
+.motto { font-family: var(--hand); color: var(--sanguine); font-size: 1.15rem; margin-top: 1.2rem; max-width: 24rem; }
 .featured {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -49,9 +53,13 @@
 .next-steps { display: flex; flex-wrap: wrap; gap: 14px 36px; margin-top: 1.6rem; font-size: 1.15rem; }
 
 @media (max-width: 780px) {
-  .hero, .featured { grid-template-columns: 1fr; }
+  .hero, .platforms { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 2.6rem; margin-top: 1.4rem; }
+.platforms svg { max-width: 260px; margin-bottom: .6rem; }
+.platforms h3 { font-size: 1.6rem; }
+.motto { font-family: var(--hand); color: var(--sanguine); font-size: 1.15rem; margin-top: 1.2rem; max-width: 24rem; }
+.featured { grid-template-columns: 1fr; }
   .hero { padding-top: 40px; }
-  .approach { grid-template-columns: 1fr; gap: 1.8rem; }
+  .approach, .platforms { grid-template-columns: 1fr; gap: 1.8rem; }
 }
 </style>
 </head>
@@ -107,7 +115,8 @@
     <div>
       <span class="folio-mark">f. 1r</span>
       <h1>Martina &amp; Parra</h1>
-      <p class="hero-lead">Sustainable engineering for public, commercial, agricultural and industrial clients, from London to the European Union.</p>
+      <p class="hero-lead">Modular technologies for energy and water, developed in London and moving to the European Union.</p>
+      <p class="motto">Energy enables economic capacity. Water enables life and productive resilience.</p>
     </div>
 
     <svg class="drawing trace" viewBox="0 0 600 400" role="img"
@@ -174,8 +183,8 @@
     <div>
       <span class="folio-mark">f. 1v</span>
       <h2 id="who">Who we are</h2>
-      <p>Martina &amp; Parra is an engineering and research firm founded in London in 2022. We design environmental and energy solutions that balance the economic, environmental and social goals of each client.</p>
-      <p><a class="text-link" href="about.html">About the company</a></p>
+      <p>Martina &amp; Parra is an engineering and research group founded in London in 2022. We develop our own technologies: ISOBAR for energy, HYGROSTREAM for water, and research into food production and self-sufficient communities.</p>
+      <p><a class="text-link" href="about.html">About the group</a></p>
     </div>
     <aside class="marginalia" aria-hidden="true">
       <p>Londra, MMXXII</p>
@@ -183,11 +192,11 @@
     </aside>
   </section>
 
-  <!-- APPROACH -->
+  <!-- PRINCIPLES -->
   <section class="folio" aria-labelledby="approach">
     <div>
       <span class="folio-mark">f. 2r</span>
-      <h2 id="approach">Our approach</h2>
+      <h2 id="approach">How we work</h2>
       <div class="approach">
         <div>
           <svg class="drawing" viewBox="0 0 72 72" aria-hidden="true">
@@ -199,8 +208,8 @@
               <path class="hatch" d="M34 18 L38 18 L30 40 Z"/>
             </g>
           </svg>
-          <h3>Built for each client</h3>
-          <p>Solutions customised to each client, built on sustainable practice rather than off-the-shelf engineering.</p>
+          <h3>Evidence before claims</h3>
+          <p>Simulation results, design targets and measured performance are always kept apart.</p>
         </div>
         <div>
           <svg class="drawing" viewBox="0 0 72 72" aria-hidden="true">
@@ -212,8 +221,8 @@
             <path class="chalk" d="M36 30 L36 42 M30 36 L42 36"/>
             </g></g>
           </svg>
-          <h3>Modelled before it is built</h3>
-          <p>3D modelling, digital simulation and real-time monitoring, with a client platform for transparent project tracking.</p>
+          <h3>Modular by design</h3>
+          <p>Units built for manufacture, transport, maintenance and replication.</p>
         </div>
         <div>
           <svg class="drawing" viewBox="0 0 72 72" aria-hidden="true">
@@ -226,8 +235,8 @@
             <path class="flow" d="M22 26 Q40 16 50 30"/>
             <path class="chalk-fill" d="M50 30 l-2 -8 l-5 5 z"/>
           </svg>
-          <h3>From the UK into Europe</h3>
-          <p>Established in the United Kingdom and now extending operations into the European Union, with a longer-term focus on tropical regions that share our commitment to renewable energy.</p>
+          <h3>A European base</h3>
+          <p>Moving from the United Kingdom to the European Union, with regional, port and maritime applications.</p>
         </div>
       </div>
     </div>
@@ -236,17 +245,14 @@
     </aside>
   </section>
 
-  <!-- FEATURED PROJECT -->
-  <section class="folio" aria-labelledby="isobar">
-    <div class="featured">
-      <div>
-        <span class="folio-mark">f. 2v</span>
-        <h2 id="isobar">ISOBAR</h2>
-        <p>A closed hydraulic process for generating electrical energy from pressure differentials.</p>
-        <p class="patent-no">UK patent application GB2603682.2</p>
-        <p><a class="text-link" href="isobar.html">Read about the project</a></p>
-      </div>
-      <svg class="drawing" viewBox="0 0 260 200" aria-hidden="true">
+  <!-- TECHNOLOGIES -->
+  <section class="folio" aria-labelledby="tech">
+    <div>
+      <span class="folio-mark">f. 2v</span>
+      <h2 id="tech">Our technologies</h2>
+      <div class="platforms">
+        <article>
+          <svg class="drawing" viewBox="0 0 260 200" aria-hidden="true">
         <ellipse class="shade" cx="136" cy="186" rx="70" ry="6" filter="url(#smudge)"/>
         <g filter="url(#pencil)">
         <path class="hatch-x" d="M130 170 A70 70 0 0 0 200 100 L190 100 A60 60 0 0 1 130 160 Z"/>
@@ -262,9 +268,38 @@
         <path class="flow" d="M205 60 A85 85 0 0 1 215 130"/>
         <path class="chalk-fill" d="M215 130 l-7 -6 l9 -3 z"/>
       </svg>
+          <h3>ISOBAR</h3>
+          <p>Pressure-differential hydraulic energy. Target: modular units of 1–3 MW.</p>
+          <p class="patent-no">UK patent application GB2603682.2</p>
+          <p><a class="text-link" href="isobar.html">Read about ISOBAR</a></p>
+        </article>
+        <article>
+          <svg class="drawing" viewBox="0 0 260 200" aria-hidden="true">
+        <ellipse class="shade" cx="130" cy="186" rx="80" ry="6" filter="url(#smudge)"/>
+        <g filter="url(#pencil)">
+          <path class="ink" d="M70 182 A60 8 0 0 0 190 182 L190 170 A60 8 0 0 1 70 170 Z"/>
+          <path class="hatch" d="M130 190 A60 8 0 0 0 190 182 L190 170 A60 8 0 0 1 130 178 Z"/>
+          <path class="ink" d="M100 170 C104 140 124 130 126 90 M160 170 C156 140 136 130 134 90 M114 170 C118 140 128 128 128 90 M146 170 C142 140 132 128 132 90"/>
+          <rect class="ink" x="125" y="40" width="10" height="130"/>
+          <path class="ink" d="M125 40 L130 18 L135 40"/>
+          <path d="M127 110 Q90 108 52 86 M127 96 Q96 86 70 56 M127 82 Q108 64 98 34 M133 110 Q170 108 208 86 M133 96 Q164 86 190 56 M133 82 Q152 64 162 34" style="fill:none;stroke:var(--ink);stroke-width:7;stroke-linecap:round"/>
+          <path d="M127 110 Q90 108 52 86 M127 96 Q96 86 70 56 M127 82 Q108 64 98 34 M133 110 Q170 108 208 86 M133 96 Q164 86 190 56 M133 82 Q152 64 162 34" style="fill:none;stroke:var(--paper);stroke-width:5;stroke-linecap:round"/>
+          <path class="ink" d="M62 100 a9 7 0 0 0 18 0 Z M80 72 a9 7 0 0 0 18 0 Z M162 72 a9 7 0 0 0 18 0 Z M180 100 a9 7 0 0 0 18 0 Z"/>
+        </g>
+        <path class="flow" d="M130 48 L130 168"/>
+        <path class="flow-soft" d="M126 16 q-5 -7 0 -14 M134 16 q5 -7 0 -14"/>
+      </svg>
+          <h3>HYGROSTREAM</h3>
+          <p>Large-scale atmospheric water generation. Design target: 44 m³ of water a day per tree.</p>
+          <p class="patent-no">European patent application in preparation</p>
+          <p><a class="text-link" href="hygrostream.html">Read about HYGROSTREAM</a></p>
+        </article>
+      </div>
+      <p style="margin-top:2rem"><a class="text-link" href="research.html">Other projects in development</a></p>
     </div>
     <aside class="marginalia" aria-hidden="true">
-      <p>la forza dell'acqua</p>
+      <p>energia</p>
+      <p>acqua</p>
     </aside>
   </section>
 
