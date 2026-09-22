@@ -1,0 +1,179 @@
+/* ==========================================================
+   CODEX — shared stylesheet for martinaparra.org
+   Renaissance engineer's notebook: sepia ink, red chalk, paper
+   ========================================================== */
+
+:root {
+  --paper:      #ece0c4;
+  --paper-deep: #dccb9f;
+  --ink:        #3b2a1c;
+  --ink-faded:  #6f5a45;
+  --sanguine:   #9c4a2c;
+  --rule:       rgba(59, 42, 28, .14);
+
+  --serif: 'IM Fell English', 'Iowan Old Style', Georgia, serif;
+  --hand:  'La Belle Aurore', 'Segoe Script', cursive;
+
+  --measure: 34rem;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { background: #2a1d12; }
+
+body {
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--ink);
+  min-height: 100vh;
+  padding: clamp(0px, 3vw, 40px);
+}
+
+/* ---------- the sheet ---------- */
+.sheet {
+  max-width: 1080px;
+  margin: 0 auto;
+  position: relative;
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(ellipse 60% 40% at 8% 6%,  rgba(140, 95, 40, .18), transparent 70%),
+    radial-gradient(ellipse 50% 35% at 94% 92%, rgba(140, 95, 40, .22), transparent 70%),
+    radial-gradient(circle at 78% 14%, rgba(120, 80, 30, .10) 0 2%, transparent 3%),
+    radial-gradient(circle at 18% 71%, rgba(120, 80, 30, .08) 0 1.5%, transparent 2.5%),
+    radial-gradient(ellipse at center, transparent 55%, rgba(90, 60, 25, .28) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .25 0 0 0 0 .12 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  box-shadow: 0 30px 90px rgba(0, 0, 0, .6);
+  padding: 0 clamp(22px, 6vw, 72px) 48px;
+}
+
+/* ---------- navigation ---------- */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  padding: 26px 0 18px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: var(--ink);
+}
+.nav-brand img {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  filter: sepia(.35) saturate(.8);
+}
+.nav-brand span { font-size: 1.35rem; letter-spacing: .01em; }
+
+.nav ul { display: flex; flex-wrap: wrap; gap: 4px 22px; list-style: none; }
+.nav a {
+  color: var(--ink-faded);
+  text-decoration: none;
+  font-style: italic;
+  padding: 2px 0;
+  border-bottom: 1px solid transparent;
+}
+.nav a:hover { color: var(--ink); border-bottom-color: var(--sanguine); }
+.nav a[aria-current="page"] { color: var(--sanguine); }
+
+a:focus-visible { outline: 2px dashed var(--sanguine); outline-offset: 4px; }
+
+/* ---------- folio page layout: text + margin ---------- */
+.folio {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 13rem;
+  gap: 0 3rem;
+  padding: 56px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.folio:last-of-type { border-bottom: 0; }
+
+.folio-mark {
+  font-family: var(--hand);
+  color: var(--ink-faded);
+  font-size: 1rem;
+}
+
+.marginalia {
+  font-family: var(--hand);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--ink-faded);
+  padding-top: .4rem;
+  transform: rotate(-2deg);
+}
+.marginalia p + p { margin-top: 1.2rem; }
+.mirror { display: inline-block; transform: scaleX(-1); }
+
+h1, h2, h3 { font-weight: 400; line-height: 1.15; }
+
+h2 {
+  font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+  margin: .3rem 0 1.1rem;
+}
+h3 { font-size: 1.3rem; margin-bottom: .4rem; }
+
+p { max-width: var(--measure); }
+p + p { margin-top: 1rem; }
+
+.text-link {
+  color: var(--sanguine);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+.text-link:hover { color: var(--ink); }
+
+/* ---------- footer ---------- */
+.colophon {
+  margin-top: 8px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 32px;
+  font-size: .9rem;
+  color: var(--ink-faded);
+}
+.colophon a { color: var(--ink-faded); }
+
+/* ---------- sepia line drawings ---------- */
+.drawing { width: 100%; height: auto; display: block; }
+.drawing .ink   { fill: none; stroke: var(--ink); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.drawing .thin  { fill: none; stroke: var(--ink-faded); stroke-width: .7; stroke-linecap: round; }
+.drawing .chalk { fill: none; stroke: var(--sanguine); stroke-width: 1.2; stroke-linecap: round; }
+.drawing .chalk-fill { fill: var(--sanguine); }
+.drawing text { font-family: var(--hand); fill: var(--ink-faded); font-size: 15px; }
+.drawing text.red { fill: var(--sanguine); }
+
+/* one orchestrated moment: the drawing is traced on load */
+.trace .ink, .trace .thin, .trace .chalk {
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+  animation: trace 3.2s ease-out forwards;
+}
+.trace .thin  { animation-delay: .9s; }
+.trace .chalk { animation-delay: 1.8s; }
+.trace text, .trace .chalk-fill { opacity: 0; animation: appear 1s ease-out 2.6s forwards; }
+
+@keyframes trace  { to { stroke-dashoffset: 0; } }
+@keyframes appear { to { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .trace .ink, .trace .thin, .trace .chalk { animation: none; stroke-dashoffset: 0; }
+  .trace text, .trace .chalk-fill { animation: none; opacity: 1; }
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 780px) {
+  body { font-size: 1.05rem; }
+  .folio { grid-template-columns: 1fr; padding: 40px 0; }
+  .marginalia { transform: none; margin-top: 1.6rem; padding-left: 1rem; border-left: 1px solid var(--sanguine); }
+}
