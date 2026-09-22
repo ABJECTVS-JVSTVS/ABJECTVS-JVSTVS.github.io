@@ -180,15 +180,21 @@ p + p { margin-top: 1rem; }
 @keyframes trace  { to { stroke-dashoffset: 0; } }
 @keyframes flow   { to { stroke-dashoffset: -28; } }
 @keyframes spin   { to { transform: rotate(360deg); } }
+@keyframes sway   { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
 @keyframes swing  { 0%, 100% { transform: rotate(-7deg); } 50% { transform: rotate(7deg); } }
 
 .drawing .spin, .drawing .spin-slow, .drawing .swing { transform-box: view-box; }
 .drawing .spin      { animation: spin 9s linear infinite; }
+.drawing .leaf      { fill: none; stroke: #5b6a3a; stroke-width: .9; stroke-linecap: round; opacity: .85; }
+.drawing .sway      { transform-box: view-box; animation: sway 4.5s ease-in-out infinite; }
+.drawing .swing-slow{ transform-box: view-box; animation: swing 9s ease-in-out infinite; }
+.drawing .flow-soft { fill: none; stroke: var(--sanguine); stroke-width: .9; stroke-dasharray: 4 6; opacity: .8; animation: flow 3s linear infinite; }
 .drawing .spin-slow { animation: spin 24s linear infinite; }
 .drawing .swing     { animation: swing 5s ease-in-out infinite; }
 
 .trace .hatch, .trace .hatch-x, .trace .shade, .trace .flow { opacity: 0; animation: appear 1.2s ease-out 2.2s forwards, flow 1.6s linear infinite; }
 .trace .hatch, .trace .hatch-x { animation: appear 1.2s ease-out 1.6s forwards; }
+.trace .leaf { opacity: 0; animation: appear 1.4s ease-out 2.4s forwards; }
 .trace .shade { animation: appear-shade 1.2s ease-out 1.6s forwards; }
 @keyframes appear-shade { to { opacity: .4; } }
 @keyframes appear { to { opacity: 1; } }
@@ -197,7 +203,8 @@ p + p { margin-top: 1rem; }
   .trace .ink, .trace .thin, .trace .chalk { animation: none; stroke-dashoffset: 0; }
   .trace text, .trace .chalk-fill, .trace .hatch, .trace .hatch-x, .trace .flow { animation: none; opacity: 1; }
   .trace .shade { animation: none; opacity: .4; }
-  .drawing .flow, .drawing .spin, .drawing .spin-slow, .drawing .swing { animation: none; }
+  .trace .leaf { animation: none; opacity: .85; }
+  .drawing .flow, .drawing .flow-soft, .drawing .spin, .drawing .spin-slow, .drawing .swing, .drawing .swing-slow, .drawing .sway { animation: none; }
 }
 
 /* ---------- responsive ---------- */
