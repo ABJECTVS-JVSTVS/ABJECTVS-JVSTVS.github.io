@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Martina &amp; Parra</title>
+<meta name="description" content="About Martina & Parra: an engineering and research group founded in London in 2022 and moving to the European Union. Led by Ing. Dan Capriles Parra REnvP MSOE and David Martina Parra.">
+<link rel="icon" href="senior_lupus.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="codex.css">
+
+<style>
+.people { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 2.6rem; margin-top: 1.4rem; }
+.people h3 { font-size: 1.45rem; margin-bottom: .1rem; }
+.role { font-style: italic; color: var(--sanguine); margin-bottom: .8rem; }
+.people p { font-size: 1.02rem; }
+.affil { list-style: none; margin-top: .8rem; font-size: .98rem; }
+.affil li { padding: .3rem 0; border-bottom: 1px solid var(--rule); }
+.arms { display: grid; grid-template-columns: 140px 1fr; gap: 1.8rem; align-items: center; }
+.arms img { width: 140px; height: 140px; border-radius: 50%; filter: sepia(.45) saturate(.75); box-shadow: 0 0 0 1px var(--rule); }
+.page-head { padding: 56px 0 24px; }
+.page-head h1 { font-size: clamp(2.6rem, 6vw, 4.2rem); margin: .2rem 0 .2rem; letter-spacing: .01em; }
+.model { font-size: 1.3rem; font-style: italic; color: var(--ink-faded); }
+.hero-plate { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 2.6rem; align-items: center; padding-bottom: 48px; border-bottom: 1px solid var(--rule); }
+.big-figure { font-size: clamp(3.4rem, 8vw, 5.6rem); line-height: 1; color: var(--sanguine); }
+.big-figure small { font-size: .35em; color: var(--ink); }
+.target { font-family: var(--hand); color: var(--ink-faded); font-size: 1.1rem; margin-top: .4rem; }
+.steps { list-style: none; counter-reset: s; margin-top: 1.4rem; display: grid; gap: 1.1rem; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 2.4rem 1fr; gap: .8rem; }
+.steps li::before { content: counter(s, upper-roman); font-family: var(--hand); color: var(--sanguine); font-size: 1.2rem; }
+.steps b { font-weight: 400; font-style: italic; }
+.uses { display: grid; grid-template-columns: max-content 1fr; gap: .45rem 1.2rem; margin-top: 1.2rem; }
+.uses dt { font-style: italic; color: var(--sanguine); }
+.ledger { width: 100%; max-width: 34rem; border-collapse: collapse; margin-top: 1.2rem; font-size: 1rem; }
+.ledger th, .ledger td { text-align: left; padding: .4rem .8rem .4rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.ledger th { font-weight: 400; font-style: italic; color: var(--ink-faded); width: 45%; }
+.ledger .n { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.climates th { width: auto; }
+.note { font-size: .95rem; color: var(--ink-faded); font-style: italic; margin-top: 1rem; }
+@media (max-width: 780px) { .hero-plate, .people { grid-template-columns: 1fr; } .arms { grid-template-columns: 1fr; } }
+</style>
+</head>
+
+<body>
+<!-- shared SVG defs: paper edge, pencil wobble, hatching -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="rough" x="-3%" y="-3%" width="106%" height="106%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="5" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="18" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="pencil" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="g"/>
+      <feDisplacementMap in="SourceGraphic" in2="g" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="smudge"><feGaussianBlur stdDeviation="6"/></filter>
+    <pattern id="hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
+      <line x1="0" y1="0" x2="0" y2="5" stroke="#3b2a1c" stroke-width=".8" stroke-opacity=".8"/>
+    </pattern>
+    <pattern id="hatch-x" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#3b2a1c" stroke-width=".7" stroke-opacity=".75"/>
+      <line x1="0" y1="0" x2="6" y2="0" stroke="#3b2a1c" stroke-width=".6" stroke-opacity=".55"/>
+    </pattern>
+  </defs>
+</svg>
+<div class="sheet">
+
+  <nav class="nav" aria-label="Main">
+    <a class="nav-brand" href="index.html">
+      <img src="senior_lupus.png" alt="">
+      <span>Martina &amp; Parra</span>
+    </a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" aria-current="page">About</a></li>
+      <li><a href="isobar.html">ISOBAR</a></li>
+      <li><a href="hygrostream.html">HYGROSTREAM</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-head">
+    <span class="folio-mark">f. 11r</span>
+    <h1>About</h1>
+    <p class="model">An engineering and research group, founded in London in 2022 and moving to the European Union.</p>
+  </header>
+
+  <section class="folio" aria-labelledby="group">
+    <div>
+      <span class="folio-mark">f. 11v</span>
+      <h2 id="group">The group</h2>
+      <p>Martina &amp; Parra develops its own technologies for energy, water and food, and turns them into infrastructure that can be manufactured, installed and repeated. We do not offer general consultancy: our engineering work serves ISOBAR, HYGROSTREAM and our research projects.</p>
+      <table class="ledger">
+        <tbody>
+          <tr><th>Martina &amp; Parra Limited</th><td>England and Wales, company no. 16205541. Co-applicant on the ISOBAR patent application.</td></tr>
+          <tr><th>Martina &amp; Parra OÜ</th><td>Being established in Estonia as the group's European base.</td></tr>
+        </tbody>
+      </table>
+      <figure class="plate">
+        <svg class="drawing trace" viewBox="0 0 560 360" role="img" aria-label="Sepia sketch of a route from London to Tallinn over a grid of meridians and parallels, with a compass rose">
+<g filter="url(#pencil)">
+<path class="thin" d="M40 30 Q20 190 40 340 M90 30 Q74 190 90 340 M140 30 Q128 190 140 340 M190 30 Q182 190 190 340 M240 30 Q236 190 240 340 M290 30 Q290 190 290 340 M340 30 Q344 190 340 340 M390 30 Q398 190 390 340 M440 30 Q452 190 440 340 M490 30 Q506 190 490 340 M540 30 Q560 190 540 340 M30 50 Q290 32 550 50 M30 98 Q290 80 550 98 M30 146 Q290 128 550 146 M30 194 Q290 176 550 194 M30 242 Q290 224 550 242 M30 290 Q290 272 550 290 M30 338 Q290 320 550 338" opacity=".35"/>
+<circle class="ink" cx="120" cy="262" r="7"/><circle class="thin" cx="120" cy="262" r="13"/>
+<circle class="ink" cx="452" cy="92" r="7"/><circle class="thin" cx="452" cy="92" r="13"/><path class="hatch" d="M452 79 A13 13 0 0 1 452 105 Z"/>
+<circle class="thin" cx="470" cy="270" r="42"/><circle class="thin" cx="470" cy="270" r="34"/>
+<path class="ink" d="M470 270 L470.0 230.0 M470 270 L485.6 254.4 M470 270 L510.0 270.0 M470 270 L485.6 285.6 M470 270 L470.0 310.0 M470 270 L454.4 285.6 M470 270 L430.0 270.0 M470 270 L454.4 254.4"/>
+<path class="hatch" d="M470 270 L470 230 L477 263 Z M470 270 L510 270 L477 277 Z M470 270 L470 310 L463 277 Z M470 270 L430 270 L463 263 Z"/>
+</g>
+<path class="flow" d="M132 254 Q250 40 440 96"/>
+<path class="chalk-fill" d="M440 96 l-12 -1 l7 -9 z"/>
+<g class="swing-slow" style="transform-origin:470px 270px"><path class="chalk" d="M470 228 L470 212"/></g>
+<text x="465" y="208" class="red">N</text>
+<text x="90" y="298">Londra</text><text x="422" y="68">Tallinn</text>
+<text x="150" y="150" class="red">MMXXVI</text>
+<text x="0" y="0" transform="translate(240 330) scale(-1 1)">verso l'Europa</text>
+</svg>
+        <figcaption>Tav. VI. From London to the European Union.</figcaption>
+      </figure>
+    </div>
+    <aside class="marginalia" aria-hidden="true">
+      <p>Londra, MMXXII</p>
+      <p>Tallinn, MMXXVI</p>
+    </aside>
+  </section>
+
+  <section class="folio" aria-labelledby="people">
+    <div>
+      <span class="folio-mark">f. 12r</span>
+      <h2 id="people">Leadership</h2>
+      <p>Invention and executive management are kept apart. The founder leads the technology; the chief executive runs the company day to day: contracts, partnerships, finance and teams.</p>
+      <div class="people">
+        <article>
+          <h3>Ing. Dan Capriles Parra REnvP MSOE</h3>
+          <p class="role">Founder and Chief Inventor</p>
+          <p>Agroindustrial engineer, Universidad de San Buenaventura, Cali (2004). He began as a project engineer with rural indigenous communities in Colombia, developing sustainable-development plans with local leaders, then worked in Portugal before settling in the United Kingdom in 2018. He leads the conception and technical architecture of ISOBAR, HYGROSTREAM and the Green House Tower.</p>
+          <ul class="affil">
+            <li>Registered Environmental Practitioner (REnvP)</li>
+            <li>Society of Operations Engineers, Member (MSOE)</li>
+            <li>Ordem dos Engenheiros, Região Sul: Membro Efetivo, Engenharia Agronómica</li>
+            <li>Sociedad Colombiana de Ingenieros, Member</li>
+          </ul>
+        </article>
+        <article>
+          <h3>David Martina Parra</h3>
+          <p class="role">Director, Martina &amp; Parra Limited · Chief Executive Officer designate, Martina &amp; Parra OÜ</p>
+          <p>Business Administrator, Universidad de San Buenaventura, Cali (2000), with more than twenty-five years in commercial management, financial services, executive advisory and project coordination.</p>
+          <p>He has advised chief executives and a vice-presidency, managed commercial units in insurance and financial planning, and coordinated projects for public, private and mixed-sector clients, including the logistics of Cali's annual Christmas lighting programme. His strengths are negotiation with government bodies, financial planning and leading teams.</p>
+          <p>He will lead Martina &amp; Parra OÜ from its incorporation: administration, contracts, finance, institutional relations and European market development.</p>
+          <ul class="affil">
+            <li>Professional licence in Business Administration, 2025</li>
+            <li>Languages: Spanish, English and Papiamento</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+    <aside class="marginalia" aria-hidden="true">
+      <p>chi inventa</p>
+      <p>chi guida</p>
+    </aside>
+  </section>
+
+  <section class="folio" aria-labelledby="arms">
+    <div>
+      <span class="folio-mark">f. 12v</span>
+      <h2 id="arms">Our arms</h2>
+      <div class="arms">
+        <img src="senior_lupus.png" alt="The Senior Lupus coat of arms">
+        <div>
+          <p>The group carries the arms of Senior Lupus, the lineage of Abraham Senior, principal counsellor to Fernando and Isabel of Castile.</p>
+          <p><a class="text-link" href="history.html">Read our history</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="colophon">
+    <span>Martina &amp; Parra Limited · Registered in England and Wales, company no. 16205541<br>Registered office: 13 Jersey Road, London SW17 9RQ</span>
+    <a href="mailto:ceo@martinaparra.org">ceo@martinaparra.org</a>
+  </footer>
+
+</div>
+</body>
+</html>
